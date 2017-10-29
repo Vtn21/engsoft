@@ -40,10 +40,16 @@ int main(int argc, char **argv)
 	int leftMotorHandle = 0, rightMotorHandle = 0;
 	int noseSensorHandle = 0;
 	int leftSensorHandle = 0, middleSensorHandle = 0, rightSensorHandle = 0;
+
+	// Variáveis dos motores
+	float maxSpeed = 2, minSpeed = 0.2;
+
+	// Variáveis do sensor de visão
+	float blackTS = 0.21;
   
 	// Variáveis de cena
-	float minMaxSpeed[2] = {50 * M_PI / 180, 300 * M_PI / 180};
-	int backUntilTime = -1;
+	// float minMaxSpeed[2] = {50 * M_PI / 180, 300 * M_PI / 180};
+	// int backUntilTime = -1;
   
 	int clientID=simxStart((simxChar*) serverIP.c_str(), serverPort, true, true, 2000, 5);
   
@@ -52,6 +58,7 @@ int main(int argc, char **argv)
 		cout << "Servidor conectado!" << std::endl;
     
 		// Inicialização dos motores
+
 		if(simxGetObjectHandle(clientID, (const simxChar*) "leftMotor", (simxInt *) &leftMotorHandle, (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
 			cout << "Handle do motor esquerdo nao encontrado!" << std::endl;
 		else
@@ -93,12 +100,88 @@ int main(int argc, char **argv)
 		else
 		{
 			cout << "Conectado ao sensor direito!" << std::endl;
-			simxReadVisionSensor(clientID,rightSensorHandle, NULL, NULL, NULL, simx_opmode_streaming);
+			simxReadVisionSensor(clientID, rightSensorHandle, NULL, NULL, NULL, simx_opmode_streaming);
 		}
+
+		// Loop principal
 
 		while(simxGetConnectionId(clientID) != -1) // Enquanto a simulação estiver ativa
 		{
+			// Leitura dos sensores de visão
 
+			simxFloat* leftValues;
+			simxInt* leftValuesCount;
+			if(simxReadVisionSensor(clientID, leftSensorHandle, NULL, &leftValues, &leftValuesCount, simx_opmode_buffer) == simx_return_ok)
+			{
+				cout << "Intensidade sensor esquerdo: " << (float) leftValues[10] << std::endl;
+			}
+
+			simxFloat* middleValues;
+			simxInt* middleValuesCount;
+			if(simxReadVisionSensor(clientID, middleSensorHandle, NULL, &middleValues, &middleValuesCount, simx_opmode_buffer) == simx_return_ok)
+			{
+				cout << "Intensidade sensor central: " << (float) middleValues[10] << std::endl;
+			}
+
+			simxFloat* rightValues;
+			simxInt* rightValuesCount;
+			if(simxReadVisionSensor(clientID, rightSensorHandle, NULL, &rightValues, &rightValuesCount, simx_opmode_buffer) == simx_return_ok)
+			{
+				cout << "Intensidade sensor direito: " << (float) rightValues[10] << std::endl;
+			}
+
+			// Indicação de qual sensor está detectando a linha
+
+			bool sensorRead[3] = {false, false, false};
+
+			if(leftValues[10] < blackTS) sensorRead[0] = true;
+			else sensorRead[0] = false;
+
+			if(middleValues[10] < blackTS) sensorRead[1] = true;
+			else sensorRead[1] = false;
+
+			if(rightValues[10] < blackTS) sensorRead[2] = true;
+			else sensorRead[2] = false;
+
+			// Tomada de decisão
+
+			float speed[2] = {0, 0};
+
+			if(sensorRead[0])
+			{
+				if(sensorRead[2])
+				{
+					speed[0] = minSpeed;
+					speed[1] = minSpeed;
+				}
+				else
+				{
+					speed[0] = minSpeed;
+					speed[1] = maxSpeed;
+				}
+			}
+			else
+			{
+				if(sensorRead[2])
+				{
+					speed[0] = maxSpeed;
+					speed[1] = minSpeed;
+				}
+				else
+				{
+					speed[0] = maxSpeed;
+					speed[1] = maxSpeed;
+				}
+			}
+
+			// Atuação
+
+			simxSetJointTargetVelocity(clientID, leftMotorHandle, (simxFloat) speed[0], simx_opmode_streaming);
+			simxSetJointTargetVelocity(clientID, rightMotorHandle, (simxFloat) speed[1], simx_opmode_streaming);
+
+			// Tempo de loop
+
+			extApi_sleepMs(5);
 		}
 
 		simxFinish(clientID); // Fechando conexão com o servidor
@@ -108,49 +191,4 @@ int main(int argc, char **argv)
 
 	return 0;
 }
-    
-//    // desvio e velocidade do robÃ´
-//    while(simxGetConnectionId(clientID)!=-1) // enquanto a simulaÃ§Ã£o estiver ativa
-//    {
-//      for(int i = 0; i < 16; i++)
-//      {
-//	simxUChar state;
-//	simxFloat coord[3];
-//
-//	if (simxReadProximitySensor(clientID,sensorHandle[i],&state,coord,NULL,NULL,simx_opmode_buffer)==simx_return_ok)
-//	{
-//	  float dist = coord[2];
-//	  if(state > 0 && (dist<noDetectionDist))
-//	  {
-//	    if(dist<maxDetectionDist)
-//	    {
-//	      dist=maxDetectionDist;
-//	    }
-//
-//	    detect[i]=1-((dist-maxDetectionDist)/(noDetectionDist-maxDetectionDist));
-//	  }
-//	  else
-//	    detect[i] = 0;
-//	}
-//	else
-//	  detect[i] = 0;
-//      }
-//
-//      vLeft = v0;
-//      vRight = v0;
-//
-//      for(int i = 0; i < 16; i++)
-//      {
-//	vLeft=vLeft+braitenbergL[i]*detect[i];
-//        vRight=vRight+braitenbergR[i]*detect[i];
-//      }
-//
-//      // atualiza velocidades dos motores
-//      simxSetJointTargetVelocity(clientID, leftMotorHandle, (simxFloat) vLeft, simx_opmode_streaming);
-//      simxSetJointTargetVelocity(clientID, rightMotorHandle, (simxFloat) vRight, simx_opmode_streaming);
-//
-//      // espera um pouco antes de reiniciar a leitura dos sensores
-//      extApi_sleepMs(5);
-//    }
-      
 
