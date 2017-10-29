@@ -1,0 +1,19 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/victo/Git/engsoft/vrep_tutorial/CPPremoteAPI/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/MinGW/bin/mingw32-make.exe" "cmTC_e1e9f/fast"
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_e1e9f.dir\build.make CMakeFiles/cmTC_e1e9f.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/victo/Git/engsoft/vrep_tutorial/CPPremoteAPI/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1e9f.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_e1e9f.dir\CheckIncludeFile.c.obj   -c C:\Users\victo\Git\engsoft\vrep_tutorial\CPPremoteAPI\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\victo\Git\engsoft\vrep_tutorial\CPPremoteAPI\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:21: fatal error: pthread.h: No such file or directory
+ #include <pthread.h>
+                     ^
+compilation terminated.
+CMakeFiles\cmTC_e1e9f.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_e1e9f.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_e1e9f.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/victo/Git/engsoft/vrep_tutorial/CPPremoteAPI/build/CMakeFiles/CMakeTmp'
+Makefile:125: recipe for target 'cmTC_e1e9f/fast' failed
+mingw32-make.exe: *** [cmTC_e1e9f/fast] Error 2
+
+
