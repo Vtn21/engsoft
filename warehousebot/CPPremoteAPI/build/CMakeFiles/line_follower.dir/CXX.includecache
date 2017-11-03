@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/v_repConst.h
+
+C:/Users/victo/Git/engsoft/line_follower/CPPremoteAPI/main.cpp
+remoteApi/extApi.h
+C:/Users/victo/Git/engsoft/line_follower/CPPremoteAPI/remoteApi/extApi.h
+iostream
+-
+string
+-
+cmath
+-
+
+C:/Users/victo/Git/engsoft/line_follower/CPPremoteAPI/remoteApi/extApi.h
+extApiPlatform.h
+C:/Users/victo/Git/engsoft/line_follower/CPPremoteAPI/remoteApi/extApiPlatform.h
+v_repConst.h
+C:/Users/victo/Git/engsoft/line_follower/CPPremoteAPI/remoteApi/v_repConst.h
+
+C:/Users/victo/Git/engsoft/line_follower/CPPremoteAPI/remoteApi/extApiPlatform.h
+stdint.h
+-
+
