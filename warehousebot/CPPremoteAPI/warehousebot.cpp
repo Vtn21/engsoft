@@ -6,55 +6,74 @@
 // Description : Warehouse robot controller (autonomous)
 //============================================================================
 
-// extern "C" {
-// 	#include "remoteApi/extApi.h"
-//   }
+extern "C" {
+	#include "remoteApi/extApi.h"
+}
   
-//   #include <iostream>
-//   #include <string>
-  
-//   #define _USE_MATH_DEFINES
-//   #include <cmath>
-  
-//   using namespace std;
-  
-//   int main(int argc, char **argv) 
-//   {
-// 	  string serverIP = "127.0.0.1";
-// 	  int serverPort = 19999;
-  
-// 	  // Handles dos componentes da cena
-// 	  int leftMotorHandle = 0, rightMotorHandle = 0;
-// 	  int noseSensorHandle = 0;
-// 	  int leftSensorHandle = 0, middleSensorHandle = 0, rightSensorHandle = 0;
-  
-// 	  // Vari�veis dos motores
-// 	  float maxSpeed = 2, minSpeed = 0.2;
-  
-// 	  // Vari�veis do sensor de vis�o
-// 	  float blackTS = 0.21;
+#include <iostream>
+#include <string>
+
+#define _USE_MATH_DEFINES
+#include <cmath>
+
+using namespace std;
+
+int main(int argc, char **argv) {
+    // Server initialization
+    string serverIP = "127.0.0.1";
+    int serverPort = 19999;
+    // Motors
+    int motorHandle[2];
+    float motorSpeed[2];
+    // Ultrasonic sensors
+    string uSensorName[16];
+    int uSensorHandle[16];
+    float uSensorDistance[16];
+    // Vision sensors
+    string vSensorName[3];
+    int vSensorHandle[3];
+    float vSensorIntensity[3][3];
+    // Start communication
+    int clientID = simxStart((simxChar*) serverIP.c_str(), serverPort, true, true, 2000, 5);
+    if(clientID != -1) {
+        // Connection OK
+        cout << "Server connected!" << endl;
+        // Connect to motors
+        if(simxGetObjectHandle(clientID, (const simxChar*) "Pioneer_p3dx_rightMotor", (simxInt *) &rightMotorHandle, (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
+            cout << "Pioneer_p3dx_rightMotor handle not found!" << endl;  
+        else
+            cout << "Connected to Pioneer_p3dx_rightMotor!" << std::endl;
+        if(simxGetObjectHandle(clientID, (const simxChar*) "Pioneer_p3dx_leftMotor", (simxInt *) &leftMotorHandle, (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
+            cout << "Pioneer_p3dx_leftMotor handle not found!" << endl;  
+        else
+            cout << "Connected to Pioneer_p3dx_leftMotor!" << endl;
+        // Connect to ultrasonic sensors
+        for(int i = 0; i < 16; i++) {
+            uSensorName[i] = "Pioneer_p3dx_ultrasonicSensor" + to_string(i + 1);
+            if(simxGetObjectHandle(clientID, (const simxChar*) uSensorName[i].c_str(), (simxInt*) &uSensorHandle[i], (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
+                cout << uSensorName[i] << " handle not found!" << endl;
+            else {
+                cout << "Connected to " << uSensorName[i] << "!" << endl;
+                simxReadProximitySensor(clientID, uSensorHandle[i], NULL, NULL, NULL, NULL, simx_opmode_streaming);
+            }
+        }
+        // Connect to vision sensors
+        for(int i = 0; i < 3; i++) {
+            vSensorName[i] = "Pioneer_p3dx_visionSensor" + to_string(i + 1);
+            if(simxGetObjectHandle(clientID, (const simxChar*) vSensorName[i].c_str(), (simxInt*) &vSensorHandle[i], (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
+                cout << vSensorName[i] << " handle not found!" << endl;
+            else {
+                cout << "Connected to " << vSensorName[i] << "!" << endl;
+                simxReadVisionSensor(clientID, vSensorHandle[i], NULL, NULL, NULL, simx_opmode_streaming);
+            }
+        } 
+    }
+    else {
+        // Connection problems
+        cout << "Unable to connect to server!" << endl;
+    }
 	
-// 	  // Vari�veis de cena
-// 	  // float minMaxSpeed[2] = {50 * M_PI / 180, 300 * M_PI / 180};
-// 	  // int backUntilTime = -1;
-	
-// 	  int clientID=simxStart((simxChar*) serverIP.c_str(), serverPort, true, true, 2000, 5);
-	
-// 	  if (clientID != -1)
-// 	  {
-// 		  cout << "Servidor conectado!" << std::endl;
-	  
-// 		  // Inicializa��o dos motores
-  
-// 		  if(simxGetObjectHandle(clientID, (const simxChar*) "leftMotor", (simxInt *) &leftMotorHandle, (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
-// 			  cout << "Handle do motor esquerdo nao encontrado!" << std::endl;
-// 		  else
-// 			  cout << "Conectado ao motor esquerdo!" << std::endl;
-	  
-// 		  if(simxGetObjectHandle(clientID, (const simxChar*) "rightMotor", (simxInt *) &rightMotorHandle, (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
-// 			  cout << "Handle do motor direito nao encontrado!" << std::endl;
-// 		  else
-// 			  cout << "Conectado ao motor direito!" << std::endl;
+
 	  
 // 		  // Inicializa��o dos sensores
   
