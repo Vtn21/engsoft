@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/v_repConst.h
+
+../libraries/robot.h
+extApi.h
+-
+iostream
+-
+string
+-
+cmath
+-
+
+../remoteApi/extApi.h
+extApiPlatform.h
+../remoteApi/extApiPlatform.h
+v_repConst.h
+../remoteApi/v_repConst.h
+
+../remoteApi/extApiPlatform.h
+stdint.h
+-
+
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousebot.cpp
+robot.h
+-
+

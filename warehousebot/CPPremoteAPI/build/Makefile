@@ -47,10 +47,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\victo\Git\engsoft\line_follower\CPPremoteAPI
+CMAKE_SOURCE_DIR = C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\victo\Git\engsoft\line_follower\CPPremoteAPI\build
+CMAKE_BINARY_DIR = C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -125,9 +125,9 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\line_follower\CPPremoteAPI\build\CMakeFiles C:\Users\victo\Git\engsoft\line_follower\CPPremoteAPI\build\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\line_follower\CPPremoteAPI\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -156,44 +156,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named line_follower
+# Target rules for targets named warehousedock
 
 # Build rule for target.
-line_follower: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 line_follower
-.PHONY : line_follower
+warehousedock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 warehousedock
+.PHONY : warehousedock
 
 # fast build rule for target.
-line_follower/fast:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/build
-.PHONY : line_follower/fast
+warehousedock/fast:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/build
+.PHONY : warehousedock/fast
 
-main.obj: main.cpp.obj
+#=============================================================================
+# Target rules for targets named warehousebot
 
-.PHONY : main.obj
+# Build rule for target.
+warehousebot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 warehousebot
+.PHONY : warehousebot
 
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/main.cpp.s
-.PHONY : main.cpp.s
+# fast build rule for target.
+warehousebot/fast:
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/build
+.PHONY : warehousebot/fast
 
 remoteApi/extApi.obj: remoteApi/extApi.c.obj
 
@@ -201,7 +187,8 @@ remoteApi/extApi.obj: remoteApi/extApi.c.obj
 
 # target to build an object file
 remoteApi/extApi.c.obj:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/remoteApi/extApi.c.obj
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/remoteApi/extApi.c.obj
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj
 .PHONY : remoteApi/extApi.c.obj
 
 remoteApi/extApi.i: remoteApi/extApi.c.i
@@ -210,7 +197,8 @@ remoteApi/extApi.i: remoteApi/extApi.c.i
 
 # target to preprocess a source file
 remoteApi/extApi.c.i:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/remoteApi/extApi.c.i
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/remoteApi/extApi.c.i
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/remoteApi/extApi.c.i
 .PHONY : remoteApi/extApi.c.i
 
 remoteApi/extApi.s: remoteApi/extApi.c.s
@@ -219,7 +207,8 @@ remoteApi/extApi.s: remoteApi/extApi.c.s
 
 # target to generate assembly for a file
 remoteApi/extApi.c.s:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/remoteApi/extApi.c.s
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/remoteApi/extApi.c.s
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/remoteApi/extApi.c.s
 .PHONY : remoteApi/extApi.c.s
 
 remoteApi/extApiPlatform.obj: remoteApi/extApiPlatform.c.obj
@@ -228,7 +217,8 @@ remoteApi/extApiPlatform.obj: remoteApi/extApiPlatform.c.obj
 
 # target to build an object file
 remoteApi/extApiPlatform.c.obj:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/remoteApi/extApiPlatform.c.obj
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj
 .PHONY : remoteApi/extApiPlatform.c.obj
 
 remoteApi/extApiPlatform.i: remoteApi/extApiPlatform.c.i
@@ -237,7 +227,8 @@ remoteApi/extApiPlatform.i: remoteApi/extApiPlatform.c.i
 
 # target to preprocess a source file
 remoteApi/extApiPlatform.c.i:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/remoteApi/extApiPlatform.c.i
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.i
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.i
 .PHONY : remoteApi/extApiPlatform.c.i
 
 remoteApi/extApiPlatform.s: remoteApi/extApiPlatform.c.s
@@ -246,8 +237,63 @@ remoteApi/extApiPlatform.s: remoteApi/extApiPlatform.c.s
 
 # target to generate assembly for a file
 remoteApi/extApiPlatform.c.s:
-	$(MAKE) -f CMakeFiles\line_follower.dir\build.make CMakeFiles/line_follower.dir/remoteApi/extApiPlatform.c.s
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.s
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.s
 .PHONY : remoteApi/extApiPlatform.c.s
+
+warehousebot.obj: warehousebot.cpp.obj
+
+.PHONY : warehousebot.obj
+
+# target to build an object file
+warehousebot.cpp.obj:
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/warehousebot.cpp.obj
+.PHONY : warehousebot.cpp.obj
+
+warehousebot.i: warehousebot.cpp.i
+
+.PHONY : warehousebot.i
+
+# target to preprocess a source file
+warehousebot.cpp.i:
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/warehousebot.cpp.i
+.PHONY : warehousebot.cpp.i
+
+warehousebot.s: warehousebot.cpp.s
+
+.PHONY : warehousebot.s
+
+# target to generate assembly for a file
+warehousebot.cpp.s:
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/warehousebot.cpp.s
+.PHONY : warehousebot.cpp.s
+
+warehousedock.obj: warehousedock.cpp.obj
+
+.PHONY : warehousedock.obj
+
+# target to build an object file
+warehousedock.cpp.obj:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/warehousedock.cpp.obj
+.PHONY : warehousedock.cpp.obj
+
+warehousedock.i: warehousedock.cpp.i
+
+.PHONY : warehousedock.i
+
+# target to preprocess a source file
+warehousedock.cpp.i:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/warehousedock.cpp.i
+.PHONY : warehousedock.cpp.i
+
+warehousedock.s: warehousedock.cpp.s
+
+.PHONY : warehousedock.s
+
+# target to generate assembly for a file
+warehousedock.cpp.s:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/warehousedock.cpp.s
+.PHONY : warehousedock.cpp.s
 
 # Help Target
 help:
@@ -255,22 +301,26 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... line_follower
+	@echo ... warehousedock
+	@echo ... warehousebot
 	@echo ... edit_cache
 	@echo ... install
 	@echo ... rebuild_cache
 	@echo ... list_install_components
 	@echo ... install/strip
 	@echo ... install/local
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
 	@echo ... remoteApi/extApi.obj
 	@echo ... remoteApi/extApi.i
 	@echo ... remoteApi/extApi.s
 	@echo ... remoteApi/extApiPlatform.obj
 	@echo ... remoteApi/extApiPlatform.i
 	@echo ... remoteApi/extApiPlatform.s
+	@echo ... warehousebot.obj
+	@echo ... warehousebot.i
+	@echo ... warehousebot.s
+	@echo ... warehousedock.obj
+	@echo ... warehousedock.i
+	@echo ... warehousedock.s
 .PHONY : help
 
 

@@ -26,8 +26,10 @@ set(HEADERS
     include/v_repConst.h
     include/v_repLib.h
 )
+
 include_directories("include/")
 include_directories("remoteApi/")
+include_directories("libraries/")
 
 find_package(Threads)
 
