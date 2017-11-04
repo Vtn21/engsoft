@@ -10,9 +10,11 @@ CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj
 CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj
  C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/remoteApi/extApiPlatform.c
  C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/remoteApi/extApiPlatform.h
-CMakeFiles/warehousebot.dir/warehousebot.cpp.obj
+CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj
  ../include/v_repConst.h
- ../libraries/robot.h
  ../remoteApi/extApi.h
  ../remoteApi/extApiPlatform.h
+ C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.cpp
+ C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
+CMakeFiles/warehousebot.dir/warehousebot.cpp.obj
  C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousebot.cpp

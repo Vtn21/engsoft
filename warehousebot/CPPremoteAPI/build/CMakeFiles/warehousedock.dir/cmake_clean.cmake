@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/warehousedock.dir/warehousedock.cpp.obj"
   "CMakeFiles/warehousedock.dir/remoteApi/extApi.c.obj"
   "CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj"
+  "CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj"
   "warehousedock.pdb"
   "warehousedock.exe"
   "warehousedock.exe.manifest"

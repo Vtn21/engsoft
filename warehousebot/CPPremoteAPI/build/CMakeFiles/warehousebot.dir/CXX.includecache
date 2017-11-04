@@ -8,16 +8,6 @@
 
 ../include/v_repConst.h
 
-../libraries/robot.h
-extApi.h
--
-iostream
--
-string
--
-cmath
--
-
 ../remoteApi/extApi.h
 extApiPlatform.h
 ../remoteApi/extApiPlatform.h
@@ -28,7 +18,19 @@ v_repConst.h
 stdint.h
 -
 
-C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousebot.cpp
-robot.h
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.cpp
+dock.h
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
+
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
+extApi.h
 -
+iostream
+-
+string
+-
+cmath
+-
+
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousebot.cpp
 

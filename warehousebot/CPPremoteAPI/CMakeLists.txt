@@ -16,6 +16,11 @@ set(SOURCES
     remoteApi/extApi.c
     #remoteApi/extApiCustom.c
     remoteApi/extApiPlatform.c
+    #libraries/diffdrive.cpp
+    libraries/dock.cpp
+    #libraries/linefollow.cpp
+    #libraries/robot.cpp
+    #libraries/statemachine.cpp
 )
  
 set(HEADERS
@@ -25,10 +30,15 @@ set(HEADERS
     remoteApi/extApiPlatform.h
     include/v_repConst.h
     include/v_repLib.h
+    #libraries/diffdrive.h
+    libraries/dock.h
+    #libraries/linefollow.h
+    #libraries/robot.h
+    #libraries/statemachine.h
 )
 
-include_directories("include/")
 include_directories("remoteApi/")
+include_directories("include/")
 include_directories("libraries/")
 
 find_package(Threads)

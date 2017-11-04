@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build
 CMakeFiles/warehousedock.dir/all:
 	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/depend
 	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=5,6,7,8 "Built target warehousedock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=6,7,8,9,10 "Built target warehousedock"
 .PHONY : CMakeFiles/warehousedock.dir/all
 
 # Include target in all.
@@ -75,7 +75,7 @@ all: CMakeFiles/warehousedock.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/warehousedock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles 5
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/warehousedock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles 0
 .PHONY : CMakeFiles/warehousedock.dir/rule
@@ -102,7 +102,7 @@ clean: CMakeFiles/warehousedock.dir/clean
 CMakeFiles/warehousebot.dir/all:
 	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/depend
 	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=1,2,3,4 "Built target warehousebot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target warehousebot"
 .PHONY : CMakeFiles/warehousebot.dir/all
 
 # Include target in all.
@@ -112,7 +112,7 @@ all: CMakeFiles/warehousebot.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/warehousebot.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles 5
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/warehousebot.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles 0
 .PHONY : CMakeFiles/warehousebot.dir/rule

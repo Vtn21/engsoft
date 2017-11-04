@@ -17,25 +17,29 @@ extern "C" {
 
 using namespace std;
 
-uint16_t dockColor[] = {1, 3};
+const int dockColor[] = {1, 3};
 
 class Dock {
 private:
     // Server parameters
     string serverIP;
     int serverPort;
+    int clientID;
     // Default boxes
     string boxName[2];
     int boxHandle[2];
+    // New boxes
+    int newBoxHandle[2];
     // Dock signal (refer to #define's)
-    uint16_t dockSignal[2];
+    int dockSignal[2];
 public:
     Dock();
     ~Dock();
     bool isActive();
     bool getDockSignal();
-    bool setDockSignal();
-    bool spawnItem(uint16_t dockNumber);
+    void setDockSignal();
+    bool spawnBox(int dockNumber);
+    bool removeBox(int dockNumber);
 };
 
 #endif // DOCK_H_

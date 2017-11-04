@@ -10,5 +10,15 @@ CMakeFiles/warehousedock.dir/remoteApi/extApi.c.obj
 CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj
  C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/remoteApi/extApiPlatform.c
  C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/remoteApi/extApiPlatform.h
+CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj
+ ../include/v_repConst.h
+ ../remoteApi/extApi.h
+ ../remoteApi/extApiPlatform.h
+ C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.cpp
+ C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
 CMakeFiles/warehousedock.dir/warehousedock.cpp.obj
+ ../include/v_repConst.h
+ ../remoteApi/extApi.h
+ ../remoteApi/extApiPlatform.h
+ C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
  C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousedock.cpp

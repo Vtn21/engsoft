@@ -181,6 +181,36 @@ warehousebot/fast:
 	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/build
 .PHONY : warehousebot/fast
 
+libraries/dock.obj: libraries/dock.cpp.obj
+
+.PHONY : libraries/dock.obj
+
+# target to build an object file
+libraries/dock.cpp.obj:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj
+.PHONY : libraries/dock.cpp.obj
+
+libraries/dock.i: libraries/dock.cpp.i
+
+.PHONY : libraries/dock.i
+
+# target to preprocess a source file
+libraries/dock.cpp.i:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/dock.cpp.i
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/dock.cpp.i
+.PHONY : libraries/dock.cpp.i
+
+libraries/dock.s: libraries/dock.cpp.s
+
+.PHONY : libraries/dock.s
+
+# target to generate assembly for a file
+libraries/dock.cpp.s:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/dock.cpp.s
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/dock.cpp.s
+.PHONY : libraries/dock.cpp.s
+
 remoteApi/extApi.obj: remoteApi/extApi.c.obj
 
 .PHONY : remoteApi/extApi.obj
@@ -309,6 +339,9 @@ help:
 	@echo ... list_install_components
 	@echo ... install/strip
 	@echo ... install/local
+	@echo ... libraries/dock.obj
+	@echo ... libraries/dock.i
+	@echo ... libraries/dock.s
 	@echo ... remoteApi/extApi.obj
 	@echo ... remoteApi/extApi.i
 	@echo ... remoteApi/extApi.s

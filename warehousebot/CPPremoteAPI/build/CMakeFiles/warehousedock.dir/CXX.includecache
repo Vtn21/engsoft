@@ -6,5 +6,33 @@
 
 #IncludeRegexTransform: 
 
+../include/v_repConst.h
+
+../remoteApi/extApi.h
+extApiPlatform.h
+../remoteApi/extApiPlatform.h
+v_repConst.h
+../remoteApi/v_repConst.h
+
+../remoteApi/extApiPlatform.h
+stdint.h
+-
+
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.cpp
+dock.h
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
+
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
+extApi.h
+-
+iostream
+-
+string
+-
+cmath
+-
+
 C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousedock.cpp
+libraries/dock.h
+C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.h
 

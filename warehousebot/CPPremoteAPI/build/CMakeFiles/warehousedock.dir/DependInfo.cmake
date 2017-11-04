@@ -18,11 +18,12 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../include"
   "../remoteApi"
+  "../include"
   "../libraries"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj"
   "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousedock.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousedock.dir/warehousedock.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -35,8 +36,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../include"
   "../remoteApi"
+  "../include"
   "../libraries"
   )
 
