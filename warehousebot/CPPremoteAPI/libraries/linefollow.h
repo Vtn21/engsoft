@@ -10,8 +10,10 @@ protected:
     ~LineFollow();
     int follow();
     int followReverse();
+    int reverse();
     void followUntilDistance(float distance);
     void spin(float angle);
+    void spinUntilLine(int direction);
     void forward(float displacement);
 };
 

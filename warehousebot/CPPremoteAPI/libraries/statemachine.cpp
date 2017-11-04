@@ -8,8 +8,8 @@
 #define YELLOW 4
 #define OTHER 5
 
-#define STEP 0.2
-#define DOCK_DISTANCE 0.4
+#define STEP 0.22
+#define DOCK_DISTANCE 0.2
 
 StateMachine::StateMachine(): LineFollow() {
     state = 0; 
@@ -26,7 +26,7 @@ StateMachine::~StateMachine() {}
 
 void StateMachine::getDockSignal() {
     for(int i = 0; i < 2; i++) {
-        simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_buffer);
+        simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_streaming);
     }  
 }
 
@@ -38,7 +38,7 @@ void StateMachine::setDockSignal() {
 
 void StateMachine::getDockBoxHandleSignal() {
     for(int i = 0; i < 2; i++) {
-        simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_buffer);
+        simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_streaming);
     } 
 }
 
@@ -60,36 +60,43 @@ void StateMachine::run() {
                 }
                 else {
                     forward(STEP); // Small forward step
-                    spin(- M_PI / 2); // 90 degree clockwise turn
+                    spinUntilLine(-1); // Clockwise turn
                     state = 1;
                     break;
                 }
             case 1: // Wait for instruction
                 while(isActive()) {
                     getDockSignal();
-                    cout << "Checking docks..." << endl;
                     for(int i = 0; i < 2; i++) {
                         if(dockSignal[i] == DOCK_NEWITEM) {
                             targetDock = i;
-                            do {
+                            while(true) {
                                  color = follow();
-                            } while(color != dockColor[i]);
-                            forward(STEP); // Small forward step
-                            spin(- M_PI / 2); // 90 degree clockwise turn
+                                 if(color != dockColor[i]) forward(STEP); // Small forward step
+                                 else break;
+                            }
+                            forward(STEP);
+                            spin(-1);
+                            spinUntilLine(-1); // 90 degree clockwise turn
                             state = 2; // Next state: pick the box
                             break;
                         }
                     }
+                    extApi_sleepMs(50);
+                    if(state != 1) break;
                 }
+                break;
             case 2: // Pick box
+                cout << "Preparing to pick box!" << endl;
                 followUntilDistance(DOCK_DISTANCE);
                 getDockBoxHandleSignal();
-                simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[targetDock], robotHandle, false, simx_opmode_oneshot_wait);
+                simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[targetDock], robotHandle, true, simx_opmode_oneshot_wait);
                 dockSignal[targetDock] = DOCK_EMPTY;
                 setDockSignal();
-                followReverse(); // Return to main path
-                forward(-STEP); // Small backwards step
-                spin(- M_PI / 2); // 90 degree counterclockwise turn
+                reverse(); // Return to main path
+                forward(STEP); // Small forward step
+                spin(1); // Counterclockwise turn
+                spinUntilLine(1);
                 state = 3; // Next state: place the recently picked box
                 break;
             case 3: // Place box
@@ -113,7 +120,7 @@ void StateMachine::run() {
                     forward(STEP); // Small forward step
                     spin(- M_PI / 2); // 90 degree clockwise turn
                     followUntilDistance(DOCK_DISTANCE);
-                    simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[abs(targetDock - 1)], -1, true, simx_opmode_oneshot_wait);
+                    simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[abs(targetDock - 1)], -1, false, simx_opmode_oneshot_wait);
                     dockSignal[targetDock] = DOCK_FULL;
                     setDockSignal();
                     followReverse(); // Return to main path

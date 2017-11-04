@@ -9,9 +9,9 @@
 #define YELLOW 4
 #define OTHER 5
 
-#define MAX_SPEED 0.12 // Pioneer 3-DX
+#define MAX_SPEED 0.2 // Pioneer 3-DX
 #define MAX_ROTATION 0.6 // Pioneer 3-DX
-#define INC 0.1
+#define INC 0.005
 
 LineFollow::LineFollow(): Robot() {
     float initialPos[2];
@@ -33,14 +33,24 @@ int LineFollow::follow() {
         }
         // No color flags found: follow line
         if(colors[0] == 0) { // Left sensor sees black
+            twist[0] = MAX_SPEED;
             if(fabs(twist[1]) <= MAX_ROTATION - INC) twist[1] += INC; // Turn left
         }
         else if(colors[2] == 0) { // Right sensor sees black
+            twist[0] = MAX_SPEED;
             if(fabs(twist[1]) <= MAX_ROTATION - INC) twist[1] -= INC; // Turn right
         }
-        else twist[1] = 0;
+        else if(colors[1] == 0) { // Middle sensor sees black
+            twist[0] = MAX_SPEED;
+            twist[1] = 0; // Go forward
+        }
+        else { // No sensor sees black: line lost
+            twist[0] = -MAX_SPEED;
+            twist[1] = 0; // Go backwards
+        }
         // Assign speed to motors
         setSpeed(twist[0], twist[1]);
+        extApi_sleepMs(5);
     }
 }
 
@@ -63,15 +73,31 @@ int LineFollow::followReverse() {
          else twist[1] = 0;
          // Assign speed to motors
          setSpeed(twist[0], twist[1]);
+         extApi_sleepMs(5);
+    }
+}
+
+int LineFollow::reverse() {
+    int* colors = new int[3];
+    float twist[] = {-MAX_SPEED, 0};
+    setSpeed(twist[0], twist[1]);
+    while(true) {
+        // Check if some color flag was found
+        colors = getColors();
+        if(colors[1] != 0) {
+            setSpeed(0, 0);
+            return colors[1];
+        }
     }
 }
 
 void LineFollow::followUntilDistance(float distance) {
-    float twist[] = {MAX_SPEED/2, 0};
+    float twist[] = {MAX_SPEED, 0};
     while(true) {
         readUSensor();
         if(uSensorDistance[3] < distance || uSensorDistance[4] < distance) {
             setSpeed(0, 0);
+            return;
         }
         else {
             int* colors = new int[3];
@@ -86,6 +112,7 @@ void LineFollow::followUntilDistance(float distance) {
             // Assign speed to motors
             setSpeed(twist[0], twist[1]);
         }
+        extApi_sleepMs(5);
     }
 }
 
@@ -109,6 +136,15 @@ void LineFollow::spin(float angle) {
         }
     } while(!stop);
     // Stop robot
+    setSpeed(0, 0);
+}
+
+void LineFollow::spinUntilLine(int direction) {
+    setSpeed(0, direction * MAX_ROTATION);
+    int* colors = new int[3];
+    do {
+        colors = getColors();
+    } while(colors[2] != BLACK);
     setSpeed(0, 0);
 }
 

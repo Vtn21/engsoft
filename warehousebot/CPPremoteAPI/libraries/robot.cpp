@@ -71,8 +71,8 @@ void Robot::readUSensor() {
     for(int i = 0; i < 16; i++) {
         simxUChar state;
         simxFloat coord[3];
-        simxReadProximitySensor(clientID, uSensorHandle[i], &state, coord, NULL, NULL, simx_opmode_buffer);
-        uSensorDistance[i] = coord[2]; // Update distance related to each sensor      
+        simxReadProximitySensor(clientID, (simxInt) uSensorHandle[i], &state, coord, NULL, NULL, simx_opmode_streaming);
+        uSensorDistance[i] = (float) coord[2]; // Update distance related to each sensor      
     }	
 }
 
@@ -126,7 +126,6 @@ int* Robot::getColors() {
 void Robot::setSpeed(float linear, float angular) {
     float* jointSpeed = new float[2];
     jointSpeed = twist2jointSpeed(linear, angular);
-    cout << "Joint speed: " << jointSpeed[0] << " " << jointSpeed[1] << endl; 
     for(int i = 0; i < 2; i++) {
         simxSetJointTargetVelocity(clientID, motorHandle[i], (simxFloat) jointSpeed[i], simx_opmode_streaming);
     }

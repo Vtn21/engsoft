@@ -56,7 +56,8 @@ bool Dock::isActive() {
 
 void Dock::getDockSignal() {
     for(int i = 0; i < 2; i++) {
-        simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_buffer);
+        simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_streaming);
+        cout << "Dock signal: " << dockSignal[i] << endl;
     }
 }
 
@@ -68,7 +69,7 @@ void Dock::setDockSignal() {
 
 void Dock::getDockBoxHandleSignal() {
     for(int i = 0; i < 2; i++) {
-        simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_buffer);
+        simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_streaming);
     }
 }
 
