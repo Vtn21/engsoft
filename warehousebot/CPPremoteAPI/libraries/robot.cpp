@@ -94,12 +94,12 @@ bool Robot::readVSensor() {
     return true; // Success
 }
 
-uint16_t* Robot::getColors() {
+int* Robot::getColors() {
     // Return a 3-element array with the color detected by each sensor
     // Update vision sensor readings
     readVSensor();
     // Translate from RGB intensity to color codes
-    static uint16_t colors[3];
+    static int colors[3];
     for(int i = 0; i < 3; i++) {
         if(vSensorIntensity[i][0] < 0.1) { // R < 0.1
             if(vSensorIntensity[i][1] < 0.1) { // G < 0.1

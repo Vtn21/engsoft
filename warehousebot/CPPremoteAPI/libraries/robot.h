@@ -38,7 +38,7 @@ protected:
     bool isActive();
     bool readUSensor();
     bool readVSensor();
-    uint16_t* getColors();
+    int* getColors();
     bool setSpeed(float linear, float angular);
 };
 

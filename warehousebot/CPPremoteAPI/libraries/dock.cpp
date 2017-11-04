@@ -27,6 +27,13 @@ Dock::Dock() {
         for(int i = 0; i < 2; i++) {
             simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_streaming);
         }
+        // No boxes to store handles yet
+        dockBoxHandleSignal[0] = -1;
+        dockBoxHandleSignal[1] = -1;
+        setDockBoxHandleSignal();
+        for(int i = 0; i < 2; i++) {
+            simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_streaming);
+        }
     }
     else {
         // Connection problems
@@ -60,6 +67,19 @@ void Dock::setDockSignal() {
     }
 }
 
+bool Dock::getDockBoxHandleSignal() {
+    for(int i = 0; i < 2; i++) {
+        if(simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_buffer) != simx_return_ok) return false;
+    } 
+    return true;   
+}
+
+void Dock::setDockBoxHandleSignal() {
+    for(int i = 0; i < 2; i++) {
+        simxSetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt) dockBoxHandleSignal[i], simx_opmode_oneshot);
+    }
+}
+
 bool Dock::spawnBox(int dockNumber) {
     simxInt* tempBoxHandle;
     int tempBoxCount;
@@ -80,6 +100,8 @@ bool Dock::spawnBox(int dockNumber) {
                 simxGetObjectPosition(clientID, tempBoxHandle[0], -1, &tempPos, simx_opmode_streaming);
                 // Store the handle
                 newBoxHandle[dockNumber] = tempBoxHandle[0];
+                dockBoxHandleSignal[dockNumber] = newBoxHandle[dockNumber];
+                setDockBoxHandleSignal();
                 // Flag availability of a new item
                 dockSignal[dockNumber] = DOCK_NEWITEM;
                 setDockSignal();
@@ -124,6 +146,8 @@ bool Dock::removeBox(int dockNumber) {
                     if(simxRemoveObject(clientID, (simxInt) newBoxHandle[boxNumber], simx_opmode_oneshot_wait) == simx_return_ok) {
                         // Clear the value
                         newBoxHandle[boxNumber] = -1;
+                        dockBoxHandleSignal[dockNumber] = -1;
+                        setDockBoxHandleSignal();
                         // Flag empty dock
                         dockSignal[dockNumber] = DOCK_EMPTY;
                         setDockSignal();

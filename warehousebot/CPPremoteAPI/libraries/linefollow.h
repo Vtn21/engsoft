@@ -8,8 +8,8 @@ protected:
     // Methods
     LineFollow();
     ~LineFollow();
-    uint16_t follow();
-    uint16_t followReverse();
+    int follow();
+    int followReverse();
     bool followUntilDistance(float distance);
     bool spin(float angle);
     bool forward(float displacement);

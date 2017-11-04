@@ -15,8 +15,8 @@ LineFollow::LineFollow(): Robot() {
 
 LineFollow::~LineFollow();
 
-uint16_t LineFollow::follow() {
-    uint16_t colors[3];
+int LineFollow::follow() {
+    int colors[3];
     float twist[] = {MAX_SPEED, 0};
     while(true) {
         // Check if some color flag was found
@@ -37,8 +37,8 @@ uint16_t LineFollow::follow() {
     }
 }
 
-uint16_t LineFollow::followReverse() {
-    uint16_t colors[3];
+int LineFollow::followReverse() {
+    int colors[3];
     float twist[] = {- MAX_SPEED/2, 0};
     while(true) {
          // Check if some color flag was found
@@ -63,11 +63,11 @@ bool LineFollow::followUntilDistance(float distance) {
     while(true) {
         readUSensor();
         if(uSensorDistance[3] < distance || uSensorDistance[4] < distance) {
-            if(!setSpeed(0, 0) return false;
+            if(!setSpeed(0, 0)) return false;
             else return true;
         }
         else {
-            uint16_t colors[3];
+            int colors[3];
             colors = getColors();
             if(colors[0] == BLACK) { // Left sensor sees black
                 if(fabs(twist) <= MAX_SPEED - INC) twist[1] += INC; // Turn left
