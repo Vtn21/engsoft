@@ -2,9 +2,16 @@
 #include "diffdrive.h"
 #include <cmath>
 
-#define MAX_SPEED 1.2 // Pioneer 3-DX
-#define MAX_ROTATION 3 // Pioneer 3-DX
-#define INC 0.01
+#define BLACK 0
+#define RED 1
+#define GREEN 2
+#define BLUE 3
+#define YELLOW 4
+#define OTHER 5
+
+#define MAX_SPEED 0.12 // Pioneer 3-DX
+#define MAX_ROTATION 0.6 // Pioneer 3-DX
+#define INC 0.1
 
 LineFollow::LineFollow(): Robot() {
     float initialPos[2];
@@ -13,10 +20,10 @@ LineFollow::LineFollow(): Robot() {
     }    
 }
 
-LineFollow::~LineFollow();
+LineFollow::~LineFollow() {}
 
 int LineFollow::follow() {
-    int colors[3];
+    int* colors = new int[3];
     float twist[] = {MAX_SPEED, 0};
     while(true) {
         // Check if some color flag was found
@@ -33,12 +40,12 @@ int LineFollow::follow() {
         }
         else twist[1] = 0;
         // Assign speed to motors
-        if(!setSpeed(twist[0], twist[1])) return -1;
+        setSpeed(twist[0], twist[1]);
     }
 }
 
 int LineFollow::followReverse() {
-    int colors[3];
+    int* colors = new int[3];
     float twist[] = {- MAX_SPEED/2, 0};
     while(true) {
          // Check if some color flag was found
@@ -55,54 +62,75 @@ int LineFollow::followReverse() {
          }
          else twist[1] = 0;
          // Assign speed to motors
-         if(!setSpeed(twist[0], twist[1])) return -1;
+         setSpeed(twist[0], twist[1]);
     }
 }
 
-bool LineFollow::followUntilDistance(float distance) {
+void LineFollow::followUntilDistance(float distance) {
+    float twist[] = {MAX_SPEED/2, 0};
     while(true) {
         readUSensor();
         if(uSensorDistance[3] < distance || uSensorDistance[4] < distance) {
-            if(!setSpeed(0, 0)) return false;
-            else return true;
+            setSpeed(0, 0);
         }
         else {
-            int colors[3];
+            int* colors = new int[3];
             colors = getColors();
             if(colors[0] == BLACK) { // Left sensor sees black
-                if(fabs(twist) <= MAX_SPEED - INC) twist[1] += INC; // Turn left
+                if(fabs(twist[1]) <= MAX_SPEED - INC) twist[1] += INC; // Turn left
             }
             else if(colors[2] == BLACK) { // Right sensor sees black
-                if(fabs(twist) <= MAX_SPEED - INC) twist[1] -= INC; // Turn right
+                if(fabs(twist[1]) <= MAX_SPEED - INC) twist[1] -= INC; // Turn right
             }
             else twist[1] = 0;
             // Assign speed to motors
-            if(!setSpeed(twist[0], twist[1])) return false;
+            setSpeed(twist[0], twist[1]);
         }
     }
 }
 
-bool LineFollow::spin(float angle) {
-    float initialPos[2];
+void LineFollow::spin(float angle) {
+    float initialPos[2], tempPos[2];
+    // Read initial position
     for(int i = 0; i < 2; i++) {
         simxGetJointPosition(clientID, (simxInt) motorHandle[i], (simxFloat*) &initialPos[i], simx_opmode_buffer);
     }
-    float deltaPos = angle2wheelPos(angle);
-    if(!setSpeed(0, 0)) return false; // Stop robot before spinning
-    if(simxSetJointTargetPosition(clientID, motorHandle[0], (simxFloat*) initialPos[0] - deltaPos, simx_opmode_oneshot) != simx_return_ok) return false;
-    if(simxSetJointTargetPosition(clientID, motorHandle[1], (simxFloat*) initialPos[1] + deltaPos, simx_opmode_oneshot) != simx_return_ok) return false;
-    return true;
+    // Calculate absolute value of position difference
+    float deltaPos = fabs(angle2wheelPos(angle));
+    // Define rotation direction
+    if(angle > 0) setSpeed(0, MAX_ROTATION);
+    else setSpeed(0, -MAX_ROTATION);
+    // Poll position until deltaPos is satisfied
+    bool stop = false;
+    do {
+        for(int i = 0; i < 2; i++) {
+            simxGetJointPosition(clientID, (simxInt) motorHandle[i], (simxFloat*) &tempPos[i], simx_opmode_buffer);
+            if(fabs(tempPos[i] - initialPos[i]) >= deltaPos) stop = true;
+        }
+    } while(!stop);
+    // Stop robot
+    setSpeed(0, 0);
 }
 
-bool LineFollow::forward(float displacement) {
-    float initialPos[2];
+void LineFollow::forward(float displacement) {
+    float initialPos[2], tempPos[2];
+    // Read initial position
     for(int i = 0; i < 2; i++) {
         simxGetJointPosition(clientID, (simxInt) motorHandle[i], (simxFloat*) &initialPos[i], simx_opmode_buffer);
     }
-    float deltaPos = displacement2wheelPos(displacement);
-    if(!setSpeed(0, 0)) return false; // Stop robot before spinning
-    for(int i = 0; i < 2; i++) {
-        if(simxSetJointTargetPosition(clientID, motorHandle[i], (simxFloat*) initialPos[i] + deltaPos, simx_opmode_oneshot) != simx_return_ok) return false;
-    }
-    return true;
+    // Calculate absolute value of position difference
+    float deltaPos = fabs(displacement2wheelPos(displacement));
+    // Define rotation direction
+    if(displacement > 0) setSpeed(MAX_SPEED, 0);
+    else setSpeed(-MAX_SPEED, 0);
+    // Poll position until deltaPos is satisfied
+    bool stop = false;
+    do {
+        for(int i = 0; i < 2; i++) {
+            simxGetJointPosition(clientID, (simxInt) motorHandle[i], (simxFloat*) &tempPos[i], simx_opmode_buffer);
+            if(fabs(tempPos[i] - initialPos[i]) >= deltaPos) stop = true;
+        }
+    } while(!stop);
+    // Stop robot
+    setSpeed(0, 0);
 }

@@ -131,10 +131,35 @@ CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj.provides: CMakeFiles
 CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj.provides.build: CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj
 
 
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj: CMakeFiles/warehousedock.dir/flags.make
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj: CMakeFiles/warehousedock.dir/includes_CXX.rsp
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj: ../libraries/diffdrive.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousedock.dir\libraries\diffdrive.cpp.obj -c C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\diffdrive.cpp
+
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\diffdrive.cpp > CMakeFiles\warehousedock.dir\libraries\diffdrive.cpp.i
+
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\diffdrive.cpp -o CMakeFiles\warehousedock.dir\libraries\diffdrive.cpp.s
+
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.requires:
+
+.PHONY : CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.requires
+
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.provides: CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.provides.build
+.PHONY : CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.provides
+
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.provides.build: CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj
+
+
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: CMakeFiles/warehousedock.dir/flags.make
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: CMakeFiles/warehousedock.dir/includes_CXX.rsp
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: ../libraries/dock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousedock.dir\libraries\dock.cpp.obj -c C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\dock.cpp
 
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.i: cmake_force
@@ -156,12 +181,91 @@ CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj.provides: CMakeFiles/warehou
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj.provides.build: CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj
 
 
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: CMakeFiles/warehousedock.dir/flags.make
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: CMakeFiles/warehousedock.dir/includes_CXX.rsp
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../libraries/linefollow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousedock.dir\libraries\linefollow.cpp.obj -c C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\linefollow.cpp
+
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\linefollow.cpp > CMakeFiles\warehousedock.dir\libraries\linefollow.cpp.i
+
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\linefollow.cpp -o CMakeFiles\warehousedock.dir\libraries\linefollow.cpp.s
+
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.requires:
+
+.PHONY : CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.requires
+
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.provides: CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.provides.build
+.PHONY : CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.provides
+
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.provides.build: CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj
+
+
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: CMakeFiles/warehousedock.dir/flags.make
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: CMakeFiles/warehousedock.dir/includes_CXX.rsp
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: ../libraries/robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousedock.dir\libraries\robot.cpp.obj -c C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\robot.cpp
+
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousedock.dir/libraries/robot.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\robot.cpp > CMakeFiles\warehousedock.dir\libraries\robot.cpp.i
+
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousedock.dir/libraries/robot.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\robot.cpp -o CMakeFiles\warehousedock.dir\libraries\robot.cpp.s
+
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.requires:
+
+.PHONY : CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.requires
+
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.provides: CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.provides.build
+.PHONY : CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.provides
+
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.provides.build: CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj
+
+
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: CMakeFiles/warehousedock.dir/flags.make
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: CMakeFiles/warehousedock.dir/includes_CXX.rsp
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../libraries/statemachine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousedock.dir\libraries\statemachine.cpp.obj -c C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\statemachine.cpp
+
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\statemachine.cpp > CMakeFiles\warehousedock.dir\libraries\statemachine.cpp.i
+
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\libraries\statemachine.cpp -o CMakeFiles\warehousedock.dir\libraries\statemachine.cpp.s
+
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.requires:
+
+.PHONY : CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.requires
+
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.provides: CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.provides.build
+.PHONY : CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.provides
+
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.provides.build: CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj
+
+
 # Object files for target warehousedock
 warehousedock_OBJECTS = \
 "CMakeFiles/warehousedock.dir/warehousedock.cpp.obj" \
 "CMakeFiles/warehousedock.dir/remoteApi/extApi.c.obj" \
 "CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj" \
-"CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj"
+"CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj" \
+"CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj" \
+"CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj" \
+"CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj" \
+"CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj"
 
 # External object files for target warehousedock
 warehousedock_EXTERNAL_OBJECTS =
@@ -169,12 +273,16 @@ warehousedock_EXTERNAL_OBJECTS =
 warehousedock.exe: CMakeFiles/warehousedock.dir/warehousedock.cpp.obj
 warehousedock.exe: CMakeFiles/warehousedock.dir/remoteApi/extApi.c.obj
 warehousedock.exe: CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj
+warehousedock.exe: CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj
 warehousedock.exe: CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj
+warehousedock.exe: CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj
+warehousedock.exe: CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj
+warehousedock.exe: CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj
 warehousedock.exe: CMakeFiles/warehousedock.dir/build.make
 warehousedock.exe: CMakeFiles/warehousedock.dir/linklibs.rsp
 warehousedock.exe: CMakeFiles/warehousedock.dir/objects1.rsp
 warehousedock.exe: CMakeFiles/warehousedock.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable warehousedock.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\victo\Git\engsoft\warehousebot\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable warehousedock.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\warehousedock.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,7 +293,11 @@ CMakeFiles/warehousedock.dir/build: warehousedock.exe
 CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/warehousedock.cpp.obj.requires
 CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/remoteApi/extApi.c.obj.requires
 CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj.requires
+CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj.requires
 CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj.requires
+CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj.requires
+CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj.requires
+CMakeFiles/warehousedock.dir/requires: CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj.requires
 
 .PHONY : CMakeFiles/warehousedock.dir/requires
 

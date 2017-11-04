@@ -38,9 +38,9 @@ public:
     Dock();
     ~Dock();
     bool isActive();
-    bool getDockSignal();
+    void getDockSignal();
     void setDockSignal();
-    bool getDockBoxHandleSignal();
+    void getDockBoxHandleSignal();
     void setDockBoxHandleSignal();
     bool spawnBox(int dockNumber);
     bool removeBox(int dockNumber);

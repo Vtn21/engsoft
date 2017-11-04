@@ -18,8 +18,6 @@ private:
     // Server parameters
     string serverIP;
     int serverPort;
-    // Motors
-    int motorHandle[2];
     // Ultrasonic sensors
     string uSensorName[16];
     int uSensorHandle[16];
@@ -30,16 +28,18 @@ private:
 protected:
     // Server parameters
     int clientID;
+    // Motors
+    int motorHandle[2];
     // Ultrasonic sensors
     float uSensorDistance[16];
     // Methods
     Robot();
     ~Robot();
     bool isActive();
-    bool readUSensor();
-    bool readVSensor();
+    void readUSensor();
+    void readVSensor();
     int* getColors();
-    bool setSpeed(float linear, float angular);
+    void setSpeed(float linear, float angular);
 };
 
 #endif // ROBOT_H_

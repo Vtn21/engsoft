@@ -10,11 +10,38 @@ CMakeFiles/warehousedock.dir/remoteApi/extApi.c.obj: ../remoteApi/extApiPlatform
 CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj: ../remoteApi/extApiPlatform.c
 CMakeFiles/warehousedock.dir/remoteApi/extApiPlatform.c.obj: ../remoteApi/extApiPlatform.h
 
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj: ../libraries/diffdrive.cpp
+CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj: ../libraries/diffdrive.h
+
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: ../include/v_repConst.h
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: ../remoteApi/extApi.h
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: ../remoteApi/extApiPlatform.h
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: ../libraries/dock.cpp
 CMakeFiles/warehousedock.dir/libraries/dock.cpp.obj: ../libraries/dock.h
+
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../include/v_repConst.h
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../remoteApi/extApi.h
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../remoteApi/extApiPlatform.h
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../libraries/diffdrive.h
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../libraries/linefollow.cpp
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../libraries/linefollow.h
+CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj: ../libraries/robot.h
+
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: ../include/v_repConst.h
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: ../remoteApi/extApi.h
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: ../remoteApi/extApiPlatform.h
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: ../libraries/diffdrive.h
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: ../libraries/robot.cpp
+CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj: ../libraries/robot.h
+
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../include/v_repConst.h
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../remoteApi/extApi.h
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../remoteApi/extApiPlatform.h
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../libraries/dock.h
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../libraries/linefollow.h
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../libraries/robot.h
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../libraries/statemachine.cpp
+CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj: ../libraries/statemachine.h
 
 CMakeFiles/warehousedock.dir/warehousedock.cpp.obj: ../include/v_repConst.h
 CMakeFiles/warehousedock.dir/warehousedock.cpp.obj: ../remoteApi/extApi.h

@@ -14,7 +14,7 @@ class StateMachine: public LineFollow {
 private:
     int state;
     // Full robot handle
-    int robotHandle
+    int robotHandle;
     // Dock signal
     int dockSignal[2];
     // Signal to store the handle of the box associated with each dock
@@ -22,11 +22,11 @@ private:
 public:
     StateMachine();
     ~StateMachine();
-    bool getDockSignal();
+    void getDockSignal();
     void setDockSignal();
-    bool getDockBoxHandleSignal();
+    void getDockBoxHandleSignal();
     void setDockBoxHandleSignal();    
-    bool run();
+    void run();
 };
 
 #endif // STATEMACHINE_H_

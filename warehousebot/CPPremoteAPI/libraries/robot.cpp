@@ -66,32 +66,26 @@ bool Robot::isActive() {
     else return false;
 }
 
-bool Robot::readUSensor() {
+void Robot::readUSensor() {
     // Read all 16 ultrasonic sensors
     for(int i = 0; i < 16; i++) {
         simxUChar state;
         simxFloat coord[3];
-        if (simxReadProximitySensor(clientID, uSensorHandle[i], &state, coord, NULL, NULL, simx_opmode_buffer) == simx_return_ok) {
-            uSensorDistance[i] = coord[2]; // Update distance related to each sensor
-        }
-        else return false; // Fail       
+        simxReadProximitySensor(clientID, uSensorHandle[i], &state, coord, NULL, NULL, simx_opmode_buffer);
+        uSensorDistance[i] = coord[2]; // Update distance related to each sensor      
     }	
-    return true; // Success
 }
 
-bool Robot::readVSensor() {
+void Robot::readVSensor() {
     // Read all 3 vision sensors
     simxFloat* values;
     simxInt* count;
     for(int i = 0; i < 3; i++) {
-        if(simxReadVisionSensor(clientID, vSensorHandle[i], NULL, &values, &count, simx_opmode_buffer) == simx_return_ok) {
-            vSensorIntensity[i][0] = values[11]; // R
-            vSensorIntensity[i][1] = values[12]; // G
-            vSensorIntensity[i][2] = values[13]; // B
-        }
-        else return false; // Fail
+        simxReadVisionSensor(clientID, vSensorHandle[i], NULL, &values, &count, simx_opmode_buffer);
+        vSensorIntensity[i][0] = values[11]; // R
+        vSensorIntensity[i][1] = values[12]; // G
+        vSensorIntensity[i][2] = values[13]; // B
     }    
-    return true; // Success
 }
 
 int* Robot::getColors() {
@@ -110,7 +104,7 @@ int* Robot::getColors() {
                     colors[i] = BLUE;
                 }
             }
-            else if(vSensorIntensity[i][1]) > 0.9) { // G > 0.9
+            else if(vSensorIntensity[i][1] > 0.9) { // G > 0.9
                 if(vSensorIntensity[i][2] < 0.1) { // B < 0.1
                     colors[i] = GREEN;
                 }
@@ -129,11 +123,11 @@ int* Robot::getColors() {
     return colors;
 }
 
-bool Robot::setSpeed(float linear, float angular) {
-    float jointSpeed[2] = twist2jointSpeed(linear, angular);
+void Robot::setSpeed(float linear, float angular) {
+    float* jointSpeed = new float[2];
+    jointSpeed = twist2jointSpeed(linear, angular);
+    cout << "Joint speed: " << jointSpeed[0] << " " << jointSpeed[1] << endl; 
     for(int i = 0; i < 2; i++) {
-        if(simxSetJointTargetVelocity(clientID, motorHandle[1], (simxFloat) jointSpeed[1], simx_opmode_streaming) != simx_return_ok)
-            return false; // Fail
+        simxSetJointTargetVelocity(clientID, motorHandle[i], (simxFloat) jointSpeed[i], simx_opmode_streaming);
     }
-    return true; // Success
 }

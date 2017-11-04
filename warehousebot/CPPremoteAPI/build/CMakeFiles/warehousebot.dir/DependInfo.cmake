@@ -23,7 +23,11 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../libraries"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/diffdrive.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj"
   "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/dock.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj"
+  "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/linefollow.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj"
+  "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/robot.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj"
+  "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/libraries/statemachine.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj"
   "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/warehousebot.cpp" "C:/Users/victo/Git/engsoft/warehousebot/CPPremoteAPI/build/CMakeFiles/warehousebot.dir/warehousebot.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

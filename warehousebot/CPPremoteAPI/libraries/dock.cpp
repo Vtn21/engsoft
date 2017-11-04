@@ -3,7 +3,7 @@
 Dock::Dock() {
     // Assign default values to server parameters
     serverIP = "127.0.0.1";
-    serverPort = 19999;
+    serverPort = 20000;
     // Start communication
     clientID = simxStart((simxChar*) serverIP.c_str(), serverPort, true, true, 2000, 5);
     if(clientID != -1) {
@@ -54,11 +54,10 @@ bool Dock::isActive() {
     else return false;
 }
 
-bool Dock::getDockSignal() {
+void Dock::getDockSignal() {
     for(int i = 0; i < 2; i++) {
-        if(simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_buffer) != simx_return_ok) return false;
-    } 
-    return true;   
+        simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_buffer);
+    }
 }
 
 void Dock::setDockSignal() {
@@ -67,11 +66,10 @@ void Dock::setDockSignal() {
     }
 }
 
-bool Dock::getDockBoxHandleSignal() {
+void Dock::getDockBoxHandleSignal() {
     for(int i = 0; i < 2; i++) {
-        if(simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_buffer) != simx_return_ok) return false;
-    } 
-    return true;   
+        simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_buffer);
+    }
 }
 
 void Dock::setDockBoxHandleSignal() {

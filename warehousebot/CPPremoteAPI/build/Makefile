@@ -181,6 +181,36 @@ warehousebot/fast:
 	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/build
 .PHONY : warehousebot/fast
 
+libraries/diffdrive.obj: libraries/diffdrive.cpp.obj
+
+.PHONY : libraries/diffdrive.obj
+
+# target to build an object file
+libraries/diffdrive.cpp.obj:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.obj
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj
+.PHONY : libraries/diffdrive.cpp.obj
+
+libraries/diffdrive.i: libraries/diffdrive.cpp.i
+
+.PHONY : libraries/diffdrive.i
+
+# target to preprocess a source file
+libraries/diffdrive.cpp.i:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.i
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.i
+.PHONY : libraries/diffdrive.cpp.i
+
+libraries/diffdrive.s: libraries/diffdrive.cpp.s
+
+.PHONY : libraries/diffdrive.s
+
+# target to generate assembly for a file
+libraries/diffdrive.cpp.s:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/diffdrive.cpp.s
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.s
+.PHONY : libraries/diffdrive.cpp.s
+
 libraries/dock.obj: libraries/dock.cpp.obj
 
 .PHONY : libraries/dock.obj
@@ -210,6 +240,96 @@ libraries/dock.cpp.s:
 	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/dock.cpp.s
 	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/dock.cpp.s
 .PHONY : libraries/dock.cpp.s
+
+libraries/linefollow.obj: libraries/linefollow.cpp.obj
+
+.PHONY : libraries/linefollow.obj
+
+# target to build an object file
+libraries/linefollow.cpp.obj:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.obj
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj
+.PHONY : libraries/linefollow.cpp.obj
+
+libraries/linefollow.i: libraries/linefollow.cpp.i
+
+.PHONY : libraries/linefollow.i
+
+# target to preprocess a source file
+libraries/linefollow.cpp.i:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.i
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.i
+.PHONY : libraries/linefollow.cpp.i
+
+libraries/linefollow.s: libraries/linefollow.cpp.s
+
+.PHONY : libraries/linefollow.s
+
+# target to generate assembly for a file
+libraries/linefollow.cpp.s:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/linefollow.cpp.s
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.s
+.PHONY : libraries/linefollow.cpp.s
+
+libraries/robot.obj: libraries/robot.cpp.obj
+
+.PHONY : libraries/robot.obj
+
+# target to build an object file
+libraries/robot.cpp.obj:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/robot.cpp.obj
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj
+.PHONY : libraries/robot.cpp.obj
+
+libraries/robot.i: libraries/robot.cpp.i
+
+.PHONY : libraries/robot.i
+
+# target to preprocess a source file
+libraries/robot.cpp.i:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/robot.cpp.i
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/robot.cpp.i
+.PHONY : libraries/robot.cpp.i
+
+libraries/robot.s: libraries/robot.cpp.s
+
+.PHONY : libraries/robot.s
+
+# target to generate assembly for a file
+libraries/robot.cpp.s:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/robot.cpp.s
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/robot.cpp.s
+.PHONY : libraries/robot.cpp.s
+
+libraries/statemachine.obj: libraries/statemachine.cpp.obj
+
+.PHONY : libraries/statemachine.obj
+
+# target to build an object file
+libraries/statemachine.cpp.obj:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.obj
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj
+.PHONY : libraries/statemachine.cpp.obj
+
+libraries/statemachine.i: libraries/statemachine.cpp.i
+
+.PHONY : libraries/statemachine.i
+
+# target to preprocess a source file
+libraries/statemachine.cpp.i:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.i
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.i
+.PHONY : libraries/statemachine.cpp.i
+
+libraries/statemachine.s: libraries/statemachine.cpp.s
+
+.PHONY : libraries/statemachine.s
+
+# target to generate assembly for a file
+libraries/statemachine.cpp.s:
+	$(MAKE) -f CMakeFiles\warehousedock.dir\build.make CMakeFiles/warehousedock.dir/libraries/statemachine.cpp.s
+	$(MAKE) -f CMakeFiles\warehousebot.dir\build.make CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.s
+.PHONY : libraries/statemachine.cpp.s
 
 remoteApi/extApi.obj: remoteApi/extApi.c.obj
 
@@ -339,9 +459,21 @@ help:
 	@echo ... list_install_components
 	@echo ... install/strip
 	@echo ... install/local
+	@echo ... libraries/diffdrive.obj
+	@echo ... libraries/diffdrive.i
+	@echo ... libraries/diffdrive.s
 	@echo ... libraries/dock.obj
 	@echo ... libraries/dock.i
 	@echo ... libraries/dock.s
+	@echo ... libraries/linefollow.obj
+	@echo ... libraries/linefollow.i
+	@echo ... libraries/linefollow.s
+	@echo ... libraries/robot.obj
+	@echo ... libraries/robot.i
+	@echo ... libraries/robot.s
+	@echo ... libraries/statemachine.obj
+	@echo ... libraries/statemachine.i
+	@echo ... libraries/statemachine.s
 	@echo ... remoteApi/extApi.obj
 	@echo ... remoteApi/extApi.i
 	@echo ... remoteApi/extApi.s

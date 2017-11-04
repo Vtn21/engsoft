@@ -1,6 +1,6 @@
 #include "diffdrive.h"
 
-float axleTrack = 0.1905; // Pioneer 3-DX
+float axleTrack = 0.381; // Pioneer 3-DX
 float wheelRadius = 0.0975; // Pioneer 3-DX
 
 float* twist2jointSpeed(float linear, float angular) {
