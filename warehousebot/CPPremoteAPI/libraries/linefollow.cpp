@@ -144,7 +144,7 @@ void LineFollow::spinUntilLine(int direction) {
     int* colors = new int[3];
     do {
         colors = getColors();
-    } while(colors[2] != BLACK);
+    } while(colors[1] != BLACK);
     setSpeed(0, 0);
 }
 

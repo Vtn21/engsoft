@@ -68,6 +68,6 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;gcc;gcc_eh;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;gcc;gcc_eh;moldname;mingwex")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;gcc;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/MinGW/lib/gcc/mingw32/6.3.0;C:/MinGW/lib/gcc;C:/MinGW/mingw32/lib;C:/MinGW/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

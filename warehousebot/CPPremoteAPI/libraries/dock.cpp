@@ -93,20 +93,17 @@ bool Dock::spawnBox(int dockNumber) {
             return false;
         }
         else {
-            if(simxCopyPasteObjects(clientID, (const simxInt*) &boxHandle[dockNumber], 1, &tempBoxHandle, (simxInt*) &tempBoxCount, simx_opmode_oneshot_wait) == simx_return_ok) {
-                // Get position for the first time
-                simxFloat tempPos;
-                simxGetObjectPosition(clientID, tempBoxHandle[0], -1, &tempPos, simx_opmode_streaming);
-                // Store the handle
-                newBoxHandle[dockNumber] = tempBoxHandle[0];
-                dockBoxHandleSignal[dockNumber] = newBoxHandle[dockNumber];
-                setDockBoxHandleSignal();
-                // Flag availability of a new item
-                dockSignal[dockNumber] = DOCK_NEWITEM;
-                setDockSignal();
-                return true;
-            }
-            else return false;
+            simxCopyPasteObjects(clientID, (const simxInt*) &boxHandle[dockNumber], 1, &tempBoxHandle, (simxInt*) &tempBoxCount, simx_opmode_oneshot_wait);
+            simxFloat tempPos;
+            simxGetObjectPosition(clientID, tempBoxHandle[0], -1, &tempPos, simx_opmode_streaming);
+            // Store the handle
+            newBoxHandle[dockNumber] = tempBoxHandle[0];
+            dockBoxHandleSignal[dockNumber] = newBoxHandle[dockNumber];
+            setDockBoxHandleSignal();
+            // Flag availability of a new item
+            dockSignal[dockNumber] = DOCK_NEWITEM;
+            setDockSignal();
+            return true;
         }
     }
 }

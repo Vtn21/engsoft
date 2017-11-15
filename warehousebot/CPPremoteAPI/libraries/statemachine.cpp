@@ -90,12 +90,13 @@ void StateMachine::run() {
                 cout << "Preparing to pick box!" << endl;
                 followUntilDistance(DOCK_DISTANCE);
                 getDockBoxHandleSignal();
-                simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[targetDock], robotHandle, true, simx_opmode_oneshot_wait);
+                simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot);
                 dockSignal[targetDock] = DOCK_EMPTY;
                 setDockSignal();
                 reverse(); // Return to main path
                 forward(STEP); // Small forward step
-                spin(1); // Counterclockwise turn
+                cout << "TESTE" << endl;
+                spin(1.5); // Counterclockwise turn
                 spinUntilLine(1);
                 state = 3; // Next state: place the recently picked box
                 break;
@@ -110,6 +111,7 @@ void StateMachine::run() {
                                 // Dock is empty
                                 targetDock = i;
                                 flag = false;
+                                break;
                             }
                         }
                     } while(flag);
