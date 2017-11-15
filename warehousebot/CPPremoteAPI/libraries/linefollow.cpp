@@ -150,6 +150,9 @@ void LineFollow::spinUntilLine(int direction) {
 
 void LineFollow::forward(float displacement) {
     float initialPos[2], tempPos[2];
+    for(int i = 0; i < 2; i++) {
+        simxSetJointPosition(clientID, (simxInt) motorHandle[i], (simxFloat) 0, simx_opmode_streaming);
+    }
     // Read initial position
     for(int i = 0; i < 2; i++) {
         simxGetJointPosition(clientID, (simxInt) motorHandle[i], (simxFloat*) &initialPos[i], simx_opmode_buffer);

@@ -119,17 +119,17 @@ void StateMachine::run() {
                         color = follow();
                     } while(color != dockColor[targetDock]);
 
-                    while(true) {
+                    /*while(true) {
                         color = follow();
                         if(color == dockColor[targetDock]) {
                             setSpeed(0, 0);
-                            forward(STEP);
+                            forward(0.5 * STEP);
                             cout << "FORWARD STEP" << endl;
                             setSpeed(0, 0);
                             break;
                         }
-                    }
-                    //forward(STEP); // Small forward step
+                    }*/
+                    forward(STEP); // Small forward step
                     spin(- M_PI / 2); // 90 degree clockwise turn
                     spinUntilLine(-1);
                     followUntilDistance(DOCK_DISTANCE);
