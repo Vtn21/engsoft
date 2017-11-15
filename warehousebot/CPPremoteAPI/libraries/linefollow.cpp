@@ -10,7 +10,7 @@
 #define OTHER 5
 
 #define MAX_SPEED 0.2 // Pioneer 3-DX
-#define MAX_ROTATION 0.6 // Pioneer 3-DX
+#define MAX_ROTATION 0.3 // Pioneer 3-DX
 #define INC 0.005
 
 LineFollow::LineFollow(): Robot() {

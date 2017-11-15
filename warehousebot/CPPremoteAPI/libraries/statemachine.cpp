@@ -91,7 +91,7 @@ void StateMachine::run() {
                 cout << "Preparing to pick box!" << endl;
                 followUntilDistance(DOCK_DISTANCE);
                 getDockBoxHandleSignal();
-                simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot);
+                simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot_wait);
                 dockSignal[targetDock] = DOCK_EMPTY;
                 setDockSignal();
                 reverse(); // Return to main path
