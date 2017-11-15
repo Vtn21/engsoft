@@ -60,8 +60,8 @@ void StateMachine::run() {
                 stColor[0] = 4;
                 stColor[1] = 4;
 
-                simxGetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt *) &stColor[0], simx_opmode_oneshot);
-                simxGetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt *) &stColor[1], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt) stColor[0], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt) stColor[1], simx_opmode_oneshot);
 
                 color = follow(); // Follow line until green mark is detected
                 if(color != BLUE) {
@@ -112,8 +112,8 @@ void StateMachine::run() {
                     stColor[1] = 4; //white box
                 }
 
-                simxGetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt *) &stColor[0], simx_opmode_oneshot);
-                simxGetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt *) &stColor[1], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt) stColor[0], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt) stColor[1], simx_opmode_oneshot);
 
                 dockSignal[targetDock] = DOCK_EMPTY;
                 setDockSignal();
@@ -170,8 +170,8 @@ void StateMachine::run() {
                         stColor[0] = 4; //white robot
                     }
 
-                    simxGetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt *) &stColor[0], simx_opmode_oneshot);
-                    simxGetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt *) &stColor[1], simx_opmode_oneshot);
+                    simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt) stColor[0], simx_opmode_oneshot);
+                    simxSetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt) stColor[1], simx_opmode_oneshot);
 
 
                     dockSignal[targetDock] = DOCK_FULL;
