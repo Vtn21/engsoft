@@ -25,7 +25,7 @@ public:
     void getDockSignal();
     void setDockSignal();
     void getDockBoxHandleSignal();
-    void setDockBoxHandleSignal();    
+    void setDockBoxHandleSignal();
     void run();
 };
 

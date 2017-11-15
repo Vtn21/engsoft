@@ -65,7 +65,7 @@ void StateMachine::run() {
                     state = 1;
                     break;
                 }
-            case 1: // Wait for instruction
+            case 1: // Wait for instruct
                 while(isActive()) {
                     getDockSignal();
                     for(int i = 0; i < 2; i++) {
@@ -92,6 +92,7 @@ void StateMachine::run() {
                 followUntilDistance(DOCK_DISTANCE);
                 getDockBoxHandleSignal();
                 simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot_wait);
+
                 dockSignal[targetDock] = DOCK_EMPTY;
                 setDockSignal();
                 reverse(); // Return to main path
@@ -135,6 +136,8 @@ void StateMachine::run() {
                     spinUntilLine(-1);
                     followUntilDistance(DOCK_DISTANCE);
                     simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[abs(targetDock - 1)], -1, true, simx_opmode_oneshot_wait);
+
+
                     dockSignal[targetDock] = DOCK_FULL;
                     setDockSignal();
                     reverse(); // Return to main path
