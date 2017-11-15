@@ -19,15 +19,15 @@ private:
     int dockSignal[2];
     // Signal to store the handle of the box associated with each dock
     int newBoxSignal[2];
-    // Color of robot, and box, respectively
-    int stColor[2];
+    // Color of robot, and box (dock0L, dock0U, dock1L, dock1U), respectively
+    int stColor[5];
 public:
     StateMachine();
     ~StateMachine();
     void getDockSignal();
     void setDockSignal();
-    void getNewBoxSignal();
-    void setNewBoxSignal();
+    // void getNewBoxSignal();
+    // void setNewBoxSignal();
     void run();
     void setColor(void);
 };

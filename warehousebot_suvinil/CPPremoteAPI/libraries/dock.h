@@ -34,14 +34,16 @@ private:
     int dockSignal[2];
     // Signal to store the handle of the box associated with each dock
     int dockBoxHandleSignal[2];
+
+    int stColor[5];
 public:
     Dock();
     ~Dock();
     bool isActive();
     void getDockSignal();
     void setDockSignal();
-    void getNewBoxSignal();
-    void setNewBoxSignal();
+    // void getNewBoxSignal();
+    // void setNewBoxSignal();
     bool spawnBox(int dockNumber);
     bool removeBox(int dockNumber);
 };

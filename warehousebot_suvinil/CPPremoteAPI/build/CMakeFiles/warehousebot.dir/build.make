@@ -42,10 +42,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI
+CMAKE_SOURCE_DIR = C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build
+CMAKE_BINARY_DIR = C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/warehousebot.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/warehousebot.cpp.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/warehousebot.cpp.obj: CMakeFiles/warehousebot.dir/includes_CXX.rsp
 CMakeFiles/warehousebot.dir/warehousebot.cpp.obj: ../warehousebot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/warehousebot.dir/warehousebot.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\warehousebot.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\warehousebot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/warehousebot.dir/warehousebot.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\warehousebot.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\warehousebot.cpp
 
 CMakeFiles/warehousebot.dir/warehousebot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousebot.dir/warehousebot.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\warehousebot.cpp > CMakeFiles\warehousebot.dir\warehousebot.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\warehousebot.cpp > CMakeFiles\warehousebot.dir\warehousebot.cpp.i
 
 CMakeFiles/warehousebot.dir/warehousebot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousebot.dir/warehousebot.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\warehousebot.cpp -o CMakeFiles\warehousebot.dir\warehousebot.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\warehousebot.cpp -o CMakeFiles\warehousebot.dir\warehousebot.cpp.s
 
 CMakeFiles/warehousebot.dir/warehousebot.cpp.obj.requires:
 
@@ -84,16 +84,16 @@ CMakeFiles/warehousebot.dir/warehousebot.cpp.obj.provides.build: CMakeFiles/ware
 CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj: CMakeFiles/warehousebot.dir/includes_C.rsp
 CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj: ../remoteApi/extApi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\warehousebot.dir\remoteApi\extApi.c.obj   -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\remoteApi\extApi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\warehousebot.dir\remoteApi\extApi.c.obj   -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\remoteApi\extApi.c
 
 CMakeFiles/warehousebot.dir/remoteApi/extApi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/warehousebot.dir/remoteApi/extApi.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\remoteApi\extApi.c > CMakeFiles\warehousebot.dir\remoteApi\extApi.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\remoteApi\extApi.c > CMakeFiles\warehousebot.dir\remoteApi\extApi.c.i
 
 CMakeFiles/warehousebot.dir/remoteApi/extApi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/warehousebot.dir/remoteApi/extApi.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\remoteApi\extApi.c -o CMakeFiles\warehousebot.dir\remoteApi\extApi.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\remoteApi\extApi.c -o CMakeFiles\warehousebot.dir\remoteApi\extApi.c.s
 
 CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj.requires:
 
@@ -109,16 +109,16 @@ CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj.provides.build: CMakeFiles/wa
 CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj: CMakeFiles/warehousebot.dir/includes_C.rsp
 CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj: ../remoteApi/extApiPlatform.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\warehousebot.dir\remoteApi\extApiPlatform.c.obj   -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\remoteApi\extApiPlatform.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\warehousebot.dir\remoteApi\extApiPlatform.c.obj   -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\remoteApi\extApiPlatform.c
 
 CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\remoteApi\extApiPlatform.c > CMakeFiles\warehousebot.dir\remoteApi\extApiPlatform.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\remoteApi\extApiPlatform.c > CMakeFiles\warehousebot.dir\remoteApi\extApiPlatform.c.i
 
 CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\remoteApi\extApiPlatform.c -o CMakeFiles\warehousebot.dir\remoteApi\extApiPlatform.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\remoteApi\extApiPlatform.c -o CMakeFiles\warehousebot.dir\remoteApi\extApiPlatform.c.s
 
 CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj.requires:
 
@@ -134,16 +134,16 @@ CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj.provides.build: CMake
 CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj: CMakeFiles/warehousebot.dir/includes_CXX.rsp
 CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj: ../libraries/diffdrive.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\diffdrive.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\diffdrive.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\diffdrive.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\diffdrive.cpp
 
 CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\diffdrive.cpp > CMakeFiles\warehousebot.dir\libraries\diffdrive.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\diffdrive.cpp > CMakeFiles\warehousebot.dir\libraries\diffdrive.cpp.i
 
 CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\diffdrive.cpp -o CMakeFiles\warehousebot.dir\libraries\diffdrive.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\diffdrive.cpp -o CMakeFiles\warehousebot.dir\libraries\diffdrive.cpp.s
 
 CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj.requires:
 
@@ -159,16 +159,16 @@ CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj.provides.build: CMakeFil
 CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj: CMakeFiles/warehousebot.dir/includes_CXX.rsp
 CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj: ../libraries/dock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\dock.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\dock.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\dock.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\dock.cpp
 
 CMakeFiles/warehousebot.dir/libraries/dock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousebot.dir/libraries/dock.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\dock.cpp > CMakeFiles\warehousebot.dir\libraries\dock.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\dock.cpp > CMakeFiles\warehousebot.dir\libraries\dock.cpp.i
 
 CMakeFiles/warehousebot.dir/libraries/dock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousebot.dir/libraries/dock.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\dock.cpp -o CMakeFiles\warehousebot.dir\libraries\dock.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\dock.cpp -o CMakeFiles\warehousebot.dir\libraries\dock.cpp.s
 
 CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj.requires:
 
@@ -184,16 +184,16 @@ CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj.provides.build: CMakeFiles/wa
 CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj: CMakeFiles/warehousebot.dir/includes_CXX.rsp
 CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj: ../libraries/linefollow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\linefollow.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\linefollow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\linefollow.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\linefollow.cpp
 
 CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\linefollow.cpp > CMakeFiles\warehousebot.dir\libraries\linefollow.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\linefollow.cpp > CMakeFiles\warehousebot.dir\libraries\linefollow.cpp.i
 
 CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\linefollow.cpp -o CMakeFiles\warehousebot.dir\libraries\linefollow.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\linefollow.cpp -o CMakeFiles\warehousebot.dir\libraries\linefollow.cpp.s
 
 CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj.requires:
 
@@ -209,16 +209,16 @@ CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj.provides.build: CMakeFi
 CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj: CMakeFiles/warehousebot.dir/includes_CXX.rsp
 CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj: ../libraries/robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\robot.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\robot.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\robot.cpp
 
 CMakeFiles/warehousebot.dir/libraries/robot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousebot.dir/libraries/robot.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\robot.cpp > CMakeFiles\warehousebot.dir\libraries\robot.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\robot.cpp > CMakeFiles\warehousebot.dir\libraries\robot.cpp.i
 
 CMakeFiles/warehousebot.dir/libraries/robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousebot.dir/libraries/robot.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\robot.cpp -o CMakeFiles\warehousebot.dir\libraries\robot.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\robot.cpp -o CMakeFiles\warehousebot.dir\libraries\robot.cpp.s
 
 CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj.requires:
 
@@ -234,16 +234,16 @@ CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj.provides.build: CMakeFiles/w
 CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj: CMakeFiles/warehousebot.dir/flags.make
 CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj: CMakeFiles/warehousebot.dir/includes_CXX.rsp
 CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj: ../libraries/statemachine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\statemachine.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\statemachine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\warehousebot.dir\libraries\statemachine.cpp.obj -c C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\statemachine.cpp
 
 CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\statemachine.cpp > CMakeFiles\warehousebot.dir\libraries\statemachine.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\statemachine.cpp > CMakeFiles\warehousebot.dir\libraries\statemachine.cpp.i
 
 CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\libraries\statemachine.cpp -o CMakeFiles\warehousebot.dir\libraries\statemachine.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\libraries\statemachine.cpp -o CMakeFiles\warehousebot.dir\libraries\statemachine.cpp.s
 
 CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj.requires:
 
@@ -282,7 +282,7 @@ warehousebot.exe: CMakeFiles/warehousebot.dir/build.make
 warehousebot.exe: CMakeFiles/warehousebot.dir/linklibs.rsp
 warehousebot.exe: CMakeFiles/warehousebot.dir/objects1.rsp
 warehousebot.exe: CMakeFiles/warehousebot.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable warehousebot.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable warehousebot.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\warehousebot.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -306,6 +306,6 @@ CMakeFiles/warehousebot.dir/clean:
 .PHONY : CMakeFiles/warehousebot.dir/clean
 
 CMakeFiles/warehousebot.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_masterblasterfinal\CPPremoteAPI\build\CMakeFiles\warehousebot.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build C:\Users\Leonardo\Documents\GitHub\engsoft\warehousebot_suvinil\CPPremoteAPI\build\CMakeFiles\warehousebot.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/warehousebot.dir/depend
 

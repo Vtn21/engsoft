@@ -36,17 +36,17 @@ void StateMachine::setDockSignal() {
     }
 }
 
-void StateMachine::getNewBoxSignal() {
-    for(int i = 0; i < 2; i++) {
-        simxGetIntegerSignal(clientID, (const simxChar*) ("newBoxSignal" + to_string(i)).c_str(), (simxInt*) &newBoxSignal[i], simx_opmode_streaming);
-    }
-}
+// void StateMachine::getNewBoxSignal() {
+//     for(int i = 0; i < 2; i++) {
+//         simxGetIntegerSignal(clientID, (const simxChar*) ("newBoxSignal" + to_string(i)).c_str(), (simxInt*) &newBoxSignal[i], simx_opmode_streaming);
+//     }
+// }
 
-void StateMachine::setNewBoxSignal() {
-    for(int i = 0; i < 2; i++) {
-        simxSetIntegerSignal(clientID, (const simxChar*) ("newBoxSignal" + to_string(i)).c_str(), (simxInt) newBoxSignal[i], simx_opmode_oneshot);
-    }
-}
+// void StateMachine::setNewBoxSignal() {
+//     for(int i = 0; i < 2; i++) {
+//         simxSetIntegerSignal(clientID, (const simxChar*) ("newBoxSignal" + to_string(i)).c_str(), (simxInt) newBoxSignal[i], simx_opmode_oneshot);
+//     }
+// }
 
 void StateMachine::run() {
     int color;
@@ -54,37 +54,26 @@ void StateMachine::run() {
     while(isActive()) {
         switch(state) {
             case 0: // Start
-<<<<<<< HEAD
+                stColor[0] = 4;
+                stColor[1] = 4;
+                stColor[2] = 4;
+                stColor[3] = 4;
+                stColor[4] = 4;
+
+                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor"), (simxInt) stColor[0], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0LoadColor"), (simxInt) stColor[1], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0UnloadColor"), (simxInt) stColor[2], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1LoadColor"), (simxInt) stColor[3], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1UnloadColor"), (simxInt) stColor[4], simx_opmode_oneshot);
+
                 cout << "State 0" << endl;
                 setSpeed(0, 0);
                 state = 1;
-            case 1: // Wait for instruction
-                cout << "State 1" << endl;
-=======
-
-                //White for robot and box
-                stColor[0] = 4;
-                stColor[1] = 4;
-
-                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt) stColor[0], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt) stColor[1], simx_opmode_oneshot);
-
-                color = follow(); // Follow line until green mark is detected
-                if(color != BLUE) {
-                    cout << "Start simulation with robot inside blue dock" << endl;
-                }
-                else {
-                    forward(STEP); // Small forward step
-                    spinUntilLine(-1); // Clockwise turn
-                    state = 1;
-                    break;
-                }
             case 1: // Wait for instruct
->>>>>>> c342288722f2046c455d057a8610ad24d906da81
                 while(isActive()) {
                     getDockSignal();
                     for(int i = 0; i < 2; i++) {
-                        cout << "DockSignal#" << i << ": " << dockSignal[i] << endl;
+                        // cout << "DockSignal#" << i << ": " << dockSignal[i] << endl;
                         if(dockSignal[i] == DOCK_NEWITEM) {
                             targetDock = i;
                             while(true) {
@@ -108,8 +97,8 @@ void StateMachine::run() {
             case 2: // Pick box
                 cout << "State 2" << endl;
                 cout << "Picking box at dock " << targetDock << "!" << endl;
-                getNewBoxSignal();
-                simxSetObjectParent(clientID, (simxInt) newBoxSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot_wait);
+                // getNewBoxSignal();
+                // simxSetObjectParent(clientID, (simxInt) newBoxSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot_wait);
                 //Carga
                 if(targetDock == 0)
                 {
@@ -118,15 +107,16 @@ void StateMachine::run() {
                 } else
                 {
                     stColor[0] = 2; //green robot
-                    stColor[1] = 4; //white box
+                    stColor[3] = 4; //white box
                 }
-<<<<<<< HEAD
-=======
 
-                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt) stColor[0], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt) stColor[1], simx_opmode_oneshot);
 
->>>>>>> c342288722f2046c455d057a8610ad24d906da81
+                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor"), (simxInt) stColor[0], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0LoadColor"), (simxInt) stColor[1], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0UnloadColor"), (simxInt) stColor[2], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1LoadColor"), (simxInt) stColor[3], simx_opmode_oneshot);
+                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1UnloadColor"), (simxInt) stColor[4], simx_opmode_oneshot);
+
                 dockSignal[targetDock] = DOCK_EMPTY;
                 setDockSignal();
                 cout << "DockSignal: " << dockSignal[targetDock] << endl;
@@ -156,27 +146,27 @@ void StateMachine::run() {
                     cout << "Placing box at dock " << targetDock << "!" << endl;
                     setSpeed(0, 0);
                     extApi_sleepMs(500);
-                    simxSetObjectParent(clientID, (simxInt) newBoxSignal[!targetDock], -1, true, simx_opmode_oneshot_wait);
+                    // simxSetObjectParent(clientID, (simxInt) newBoxSignal[!targetDock], -1, true, simx_opmode_oneshot_wait);
                     //Descarga
                     if(targetDock == 0)
                     {
-                        stColor[1] = 1; //red box
+                        stColor[2] = 2; //red box
                         stColor[0] = 4; //white robot
+                        cout << "Set Dock 0 Unload: " << stColor[2] << endl;
+                        
                     } else
                     {
-                        stColor[1] = 2; //green box
+                        stColor[4] = 1; //green box
                         stColor[0] = 4; //white robot
+                        cout << "Set Dock 1 Unload: " << stColor[4] << endl;
+                        
                     }
-<<<<<<< HEAD
-=======
+                    simxSetIntegerSignal(clientID, (const simxChar*) ("dock1UnloadColor"), (simxInt) stColor[4], simx_opmode_oneshot);
+                    simxSetIntegerSignal(clientID, (const simxChar*) ("dock0UnloadColor"), (simxInt) stColor[2], simx_opmode_oneshot);
+                    simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor"), (simxInt) stColor[0], simx_opmode_oneshot);
 
-                    simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor").c_str(), (simxInt) stColor[0], simx_opmode_oneshot);
-                    simxSetIntegerSignal(clientID, (const simxChar*) ("boxColor").c_str(), (simxInt) stColor[1], simx_opmode_oneshot);
-
-
->>>>>>> c342288722f2046c455d057a8610ad24d906da81
                     dockSignal[targetDock] = DOCK_FULL;
-                    //dockSignal[!targetDock] = DOCK_EMPTY;
+                    dockSignal[!targetDock] = DOCK_EMPTY;
                     setDockSignal();                    
                     state = 0; // Next state: wait for instruction
                     break;

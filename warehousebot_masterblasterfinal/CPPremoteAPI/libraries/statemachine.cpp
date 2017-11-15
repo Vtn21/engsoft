@@ -88,6 +88,16 @@ void StateMachine::run() {
                 cout << "Picking box at dock " << targetDock << "!" << endl;
                 getNewBoxSignal();
                 simxSetObjectParent(clientID, (simxInt) newBoxSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot_wait);
+                //Carga
+                if(targetDock == 0)
+                {
+                    stColor[0] = 1; //red robot
+                    stColor[1] = 4; //white box
+                } else
+                {
+                    stColor[0] = 2; //green robot
+                    stColor[1] = 4; //white box
+                }
                 dockSignal[targetDock] = DOCK_EMPTY;
                 setDockSignal();
                 cout << "DockSignal: " << dockSignal[targetDock] << endl;
@@ -118,6 +128,16 @@ void StateMachine::run() {
                     setSpeed(0, 0);
                     extApi_sleepMs(500);
                     simxSetObjectParent(clientID, (simxInt) newBoxSignal[!targetDock], -1, true, simx_opmode_oneshot_wait);
+                    //Descarga
+                    if(targetDock == 0)
+                    {
+                        stColor[1] = 1; //red box
+                        stColor[0] = 4; //white robot
+                    } else
+                    {
+                        stColor[1] = 2; //green box
+                        stColor[0] = 4; //white robot
+                    }
                     dockSignal[targetDock] = DOCK_FULL;
                     //dockSignal[!targetDock] = DOCK_EMPTY;
                     setDockSignal();                    
