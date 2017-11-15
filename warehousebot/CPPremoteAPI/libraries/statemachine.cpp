@@ -96,7 +96,7 @@ void StateMachine::run() {
                 reverse(); // Return to main path
                 forward(STEP); // Small forward step
                 cout << "TESTE" << endl;
-                spin(1.5); // Counterclockwise turn
+                spin(M_PI/2); // Counterclockwise turn
                 spinUntilLine(1);
                 state = 3; // Next state: place the recently picked box
                 break;
@@ -127,7 +127,7 @@ void StateMachine::run() {
                     setDockSignal();
                     followReverse(); // Return to main path
                     forward(-STEP); // Small backwards step
-                    spin(- M_PI / 2); // 90 degree counterclockwise turn
+                    spin(+ M_PI / 2); // 90 degree counterclockwise turn
                     state = 1; // Next state: wait for instruction
                     break;
                 }
