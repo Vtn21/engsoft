@@ -12,14 +12,14 @@
 #define DOCK_DISTANCE 0.2
 
 StateMachine::StateMachine(): LineFollow() {
-    state = 0; 
+    state = 0;
     if(isActive()) {
         // Connect to the full robot
         if(simxGetObjectHandle(clientID, (const simxChar*) "Pioneer_p3dx", (simxInt *) &robotHandle, (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
-            cout << "Pioneer_p3dx handle not found!" << endl;  
+            cout << "Pioneer_p3dx handle not found!" << endl;
         else
             cout << "Connected to Pioneer_p3dx!" << endl;
-    }    
+    }
 }
 
 StateMachine::~StateMachine() {}
@@ -27,7 +27,7 @@ StateMachine::~StateMachine() {}
 void StateMachine::getDockSignal() {
     for(int i = 0; i < 2; i++) {
         simxGetIntegerSignal(clientID, (const simxChar*) ("dockSignal" + to_string(i)).c_str(), (simxInt*) &dockSignal[i], simx_opmode_streaming);
-    }  
+    }
 }
 
 void StateMachine::setDockSignal() {
@@ -39,7 +39,7 @@ void StateMachine::setDockSignal() {
 void StateMachine::getDockBoxHandleSignal() {
     for(int i = 0; i < 2; i++) {
         simxGetIntegerSignal(clientID, (const simxChar*) ("dockBoxHandleSignal" + to_string(i)).c_str(), (simxInt*) &dockBoxHandleSignal[i], simx_opmode_streaming);
-    } 
+    }
 }
 
 void StateMachine::setDockBoxHandleSignal() {
@@ -55,8 +55,8 @@ void StateMachine::run() {
         switch(state) {
             case 0: // Start
                 color = follow(); // Follow line until green mark is detected
-                if(color != GREEN) {
-                    cout << "Start simulation with robot inside green dock" << endl;
+                if(color != BLUE) {
+                    cout << "Start simulation with robot inside blue dock" << endl;
                 }
                 else {
                     forward(STEP); // Small forward step

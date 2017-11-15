@@ -17,7 +17,7 @@ extern "C" {
 
 using namespace std;
 
-const int dockColor[] = {1, 3};
+const int dockColor[] = {1, 2};
 
 class Dock {
 private:
