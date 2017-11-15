@@ -76,6 +76,7 @@ void StateMachine::run() {
                                  else break;
                             }
                             forward(STEP);
+                            cout << "FORWARD STEP" << endl;
                             spin(-1);
                             spinUntilLine(-1); // 90 degree clockwise turn
                             state = 2; // Next state: pick the box
@@ -95,7 +96,6 @@ void StateMachine::run() {
                 setDockSignal();
                 reverse(); // Return to main path
                 forward(STEP); // Small forward step
-                cout << "TESTE" << endl;
                 spin(M_PI/2); // Counterclockwise turn
                 spinUntilLine(1);
                 state = 3; // Next state: place the recently picked box
@@ -121,13 +121,15 @@ void StateMachine::run() {
                     } while(color != dockColor[targetDock]);
                     forward(STEP); // Small forward step
                     spin(- M_PI / 2); // 90 degree clockwise turn
+                    spinUntilLine(-1);
                     followUntilDistance(DOCK_DISTANCE);
                     simxSetObjectParent(clientID, (simxInt) dockBoxHandleSignal[abs(targetDock - 1)], -1, false, simx_opmode_oneshot_wait);
                     dockSignal[targetDock] = DOCK_FULL;
                     setDockSignal();
-                    followReverse(); // Return to main path
-                    forward(-STEP); // Small backwards step
-                    spin(+ M_PI / 2); // 90 degree counterclockwise turn
+                    reverse(); // Return to main path
+                    forward(STEP); // Small backwards step
+                    spin(M_PI / 2); // 90 degree counterclockwise turn
+                    spinUntilLine(1);
                     state = 1; // Next state: wait for instruction
                     break;
                 }
