@@ -119,7 +119,7 @@ void StateMachine::run() {
                     extApi_sleepMs(500);
                     simxSetObjectParent(clientID, (simxInt) newBoxSignal[!targetDock], -1, true, simx_opmode_oneshot_wait);
                     dockSignal[targetDock] = DOCK_FULL;
-                    // dockSignal[!targetDock] = DOCK_EMPTY;
+                    //dockSignal[!targetDock] = DOCK_EMPTY;
                     setDockSignal();                    
                     state = 0; // Next state: wait for instruction
                     break;
