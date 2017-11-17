@@ -1,3 +1,0 @@
-/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/warehousebattery.dir
-/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/warehousebot.dir
-/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/warehousedock.dir
