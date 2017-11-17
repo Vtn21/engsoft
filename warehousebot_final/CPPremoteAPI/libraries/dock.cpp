@@ -95,6 +95,7 @@ bool Dock::spawnBox(int dockNumber) {
         }
         else {
             // Change dock color
+            getColorSignal();
             if(dockNumber == 0) colorSignal[1] = RED;
             else colorSignal[3] = GREEN;
             setColorSignal();
@@ -120,6 +121,7 @@ bool Dock::removeBox(int dockNumber) {
         }
         else {
             // Change dock color
+            getColorSignal();
             if(dockNumber == 0) colorSignal[2] = WHITE;
             else colorSignal[4] = WHITE;
             setColorSignal();

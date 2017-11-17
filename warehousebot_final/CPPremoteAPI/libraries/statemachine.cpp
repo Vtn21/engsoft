@@ -8,8 +8,6 @@
 #define WHITE 4
 #define YELLOW 5
 
-#define STEP 0.2
-
 StateMachine::StateMachine(): LineFollow() {
     state = 0;
     if(isActive()) {
@@ -63,32 +61,26 @@ void StateMachine::setColorSignal() {
 }
 
 void StateMachine::run() {
-    int color;
     int targetDock;
     while(isActive()) {
         switch(state) {
             case 0: // Start
                 cout << "State 0" << endl;
                 setSpeed(0, 0);
+                getDockSignal();
+                getColorSignal();
                 state = 1;
+                break;
             case 1: // Wait for instruction
                 while(isActive()) {
                     getDockSignal();
                     for(int i = 0; i < 2; i++) {
                         if(loadSignal[i] == 1) {
                             targetDock = i;
-                            while(true) {
-                                 color = follow();
-                                 if(color != dockColor[i]) forward(STEP); // Small forward step
-                                 else {
-                                    cout << "Ready to pick box at dock " << targetDock << "!" << endl;
-                                    forward(STEP);
-                                    setSpeed(0, 0);
-                                    extApi_sleepMs(500);
-                                    state = 2;
-                                    break;
-                                 }
-                            }
+                            followUntilColor(dockColor[targetDock]);
+                            cout << "Ready to pick box at dock " << targetDock << "!" << endl;
+                            extApi_sleepMs(500);
+                            state = 2;
                             break;
                         }
                     }
@@ -98,12 +90,13 @@ void StateMachine::run() {
             case 2: // Pick box
                 cout << "State 2" << endl;
                 cout << "Picking box at dock " << targetDock << "!" << endl;
-                if(targetDock == 0)
-                {
+                getDockSignal();
+                getColorSignal();
+                if(targetDock == 0) {
                     colorSignal[0] = RED; //red robot
                     colorSignal[1] = WHITE; //white box
-                } else
-                {
+                }
+                else {
                     colorSignal[0] = GREEN; //green robot
                     colorSignal[3] = WHITE; //white box
                 }
@@ -115,10 +108,10 @@ void StateMachine::run() {
             case 3: // Place box
                 cout << "State 3" << endl;
                 while(isActive()) {
-                    getDockSignal();
                     bool flag = true;
                     do {
                         // Search if the other dock is empty
+                        getDockSignal();
                         for(int i = 0; i < 2; i++) {
                             if(i != targetDock && unloadSignal[i] == 0) {
                                 // Dock is empty
@@ -129,26 +122,20 @@ void StateMachine::run() {
                         }
                     } while(flag);
                     // Go to the other dock
-                    do {
-                        color = follow();
-                        forward(STEP);
-                    } while(color != dockColor[targetDock]);
+                    followUntilColor(dockColor[targetDock]);
                     cout << "Placing box at dock " << targetDock << "!" << endl;
-                    setSpeed(0, 0);
                     extApi_sleepMs(500);
                     // Unloading
-                    if(targetDock == 0)
-                    {
-                        colorSignal[2] = RED; //red box
+                    getDockSignal();
+                    getColorSignal();
+                    if(targetDock == 0) {
+                        colorSignal[2] = GREEN; //green box
                         colorSignal[0] = WHITE; //white robot
                         cout << "Set Dock 0 Unload: " << colorSignal[2] << endl;
-                        
-                    } else
-                    {
-                        colorSignal[4] = GREEN; //green box
+                    } else {
+                        colorSignal[4] = RED; //red box
                         colorSignal[0] = WHITE; //white robot
-                        cout << "Set Dock 1 Unload: " << colorSignal[4] << endl;
-                        
+                        cout << "Set Dock 1 Unload: " << colorSignal[4] << endl; 
                     }
                     setColorSignal();
                     unloadSignal[targetDock] = 1;
