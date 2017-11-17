@@ -1,0 +1,8 @@
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/warehousedock.dir
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/warehousebot.dir
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/edit_cache.dir
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/install.dir
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/rebuild_cache.dir
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/list_install_components.dir
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/install/strip.dir
+C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/build/CMakeFiles/install/local.dir
