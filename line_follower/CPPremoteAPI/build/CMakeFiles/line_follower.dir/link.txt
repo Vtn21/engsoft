@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\line_follower.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\line_follower.dir/objects.a @CMakeFiles\line_follower.dir\objects1.rsp
-C:\MinGW\bin\g++.exe  -Wall -std=c++0x -DBUILD_SHARED_LIBS=OFF   -Wl,--whole-archive CMakeFiles\line_follower.dir/objects.a -Wl,--no-whole-archive  -o line_follower.exe -Wl,--out-implib,libline_follower.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\line_follower.dir\linklibs.rsp
