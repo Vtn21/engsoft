@@ -4,7 +4,7 @@
 extern "C" {
 	#include <extApi.h>
 }
-  
+
 #include <iostream>
 #include <string>
 
@@ -47,6 +47,7 @@ protected:
     void readVSensor();
     int* getColors();
     void setSpeed(float linear, float angular);
+	float getBatteryLevel();
 };
 
 #endif // ROBOT_H_

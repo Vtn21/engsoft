@@ -2,6 +2,7 @@
 #define STATEMACHINE_H_
 
 #include "linefollow.h"
+#include "battery.h"
 
 class StateMachine: public LineFollow {
 private:

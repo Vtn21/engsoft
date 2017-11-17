@@ -12,11 +12,11 @@ Robot::Robot() {
         cout << "Server connected!" << endl;
         // Connect to motors
         if(simxGetObjectHandle(clientID, (const simxChar*) "Pioneer_p3dx_leftMotor", (simxInt *) &motorHandle[0], (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
-            cout << "Pioneer_p3dx_leftMotor handle not found!" << endl;  
+            cout << "Pioneer_p3dx_leftMotor handle not found!" << endl;
         else
             cout << "Connected to Pioneer_p3dx_leftMotor!" << endl;
         if(simxGetObjectHandle(clientID, (const simxChar*) "Pioneer_p3dx_rightMotor", (simxInt *) &motorHandle[1], (simxInt) simx_opmode_oneshot_wait) != simx_return_ok)
-            cout << "Pioneer_p3dx_rightMotor handle not found!" << endl;  
+            cout << "Pioneer_p3dx_rightMotor handle not found!" << endl;
         else
             cout << "Connected to Pioneer_p3dx_rightMotor!" << std::endl;
         // Connect to ultrasonic sensors
@@ -38,7 +38,8 @@ Robot::Robot() {
                 cout << "Connected to " << vSensorName[i] << "!" << endl;
                 simxReadVisionSensor(clientID, vSensorHandle[i], NULL, NULL, NULL, simx_opmode_streaming);
             }
-        } 
+        }
+        simxGetFloatSignal(clientID, "batteryLevel", NULL, simx_opmode_streaming);
     }
     else {
         // Connection problems
@@ -65,8 +66,8 @@ void Robot::readUSensor() {
         simxUChar state;
         simxFloat coord[3];
         simxReadProximitySensor(clientID, (simxInt) uSensorHandle[i], &state, coord, NULL, NULL, simx_opmode_streaming);
-        uSensorDistance[i] = (float) coord[2]; // Update distance related to each sensor      
-    }	
+        uSensorDistance[i] = (float) coord[2]; // Update distance related to each sensor
+    }
 }
 
 void Robot::readVSensor() {
@@ -78,7 +79,7 @@ void Robot::readVSensor() {
         vSensorIntensity[i][0] = values[11]; // R
         vSensorIntensity[i][1] = values[12]; // G
         vSensorIntensity[i][2] = values[13]; // B
-    }    
+    }
 }
 
 int* Robot::getColors() {
@@ -122,4 +123,13 @@ void Robot::setSpeed(float linear, float angular) {
     for(int i = 0; i < 2; i++) {
         simxSetJointTargetVelocity(clientID, motorHandle[i], (simxFloat) jointSpeed[i], simx_opmode_streaming);
     }
+    float motorLoad = fabs(jointSpeed[0]) + fabs(jointSpeed[1]);
+    simxSetFloatSignal(clientID, "motorLoad", (simxFloat) motorLoad, simx_opmode_oneshot);
+}
+
+float Robot::getBatteryLevel()
+{
+    float ret;
+    simxGetFloatSignal(clientID, "batteryLevel", (simxFloat *) &ret, simx_opmode_buffer);
+    return ret;
 }

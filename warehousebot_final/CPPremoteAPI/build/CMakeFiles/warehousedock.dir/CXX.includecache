@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -18,17 +18,7 @@ v_repConst.h
 stdint.h
 -
 
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/diffdrive.cpp
-diffdrive.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/diffdrive.h
-
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/diffdrive.h
-
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/dock.cpp
-dock.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/dock.h
-
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/dock.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/battery.h
 extApi.h
 -
 iostream
@@ -38,25 +28,7 @@ string
 cmath
 -
 
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/linefollow.cpp
-linefollow.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/linefollow.h
-diffdrive.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/diffdrive.h
-cmath
--
-
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/linefollow.h
-robot.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/robot.h
-
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/robot.cpp
-robot.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/robot.h
-diffdrive.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/diffdrive.h
-
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/robot.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/dock.h
 extApi.h
 -
 iostream
@@ -66,17 +38,29 @@ string
 cmath
 -
 
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/statemachine.cpp
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/linefollow.h
+robot.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/robot.h
+
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/robot.h
+extApi.h
+-
+iostream
+-
+string
+-
+cmath
+-
+
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/statemachine.cpp
 statemachine.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/statemachine.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/statemachine.h
 dock.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/dock.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/dock.h
 
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/statemachine.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/statemachine.h
 linefollow.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/linefollow.h
-
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/warehousedock.cpp
-libraries/dock.h
-C:/Users/victo/Git/engsoft/warehousebot_final/CPPremoteAPI/libraries/dock.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/linefollow.h
+battery.h
+/home/scherma/engsoft/warehousebot_final/CPPremoteAPI/libraries/battery.h
 

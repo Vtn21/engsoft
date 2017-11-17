@@ -21,8 +21,9 @@ set(SOURCES
     libraries/linefollow.cpp
     libraries/robot.cpp
     libraries/statemachine.cpp
+    libraries/battery.cpp
 )
- 
+
 set(HEADERS
     remoteApi/extApi.h
     #remoteApi/extApiCustom.h
@@ -35,18 +36,26 @@ set(HEADERS
     libraries/linefollow.h
     libraries/robot.h
     libraries/statemachine.h
+    libraries/battery.h
 )
 
 include_directories("remoteApi/")
 include_directories("include/")
 include_directories("libraries/")
 
-find_package(Threads)
+find_package(Threads REQUIRED)
 
 add_executable(warehousebot warehousebot.cpp ${SOURCES} ${HEADERS})
-target_link_libraries(warehousebot ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+#target_link_libraries(warehousebot ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+target_link_libraries(warehousebot ${CMAKE_THREAD_LIBS_INIT} pthread)
 install(TARGETS warehousebot RUNTIME DESTINATION bin)
 
 add_executable(warehousedock warehousedock.cpp ${SOURCES} ${HEADERS})
-target_link_libraries(warehousedock ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+#target_link_libraries(warehousedock ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+target_link_libraries(warehousedock ${CMAKE_THREAD_LIBS_INIT} pthread)
 install(TARGETS warehousedock RUNTIME DESTINATION bin)
+
+add_executable(warehousebattery warehousebattery.cpp ${SOURCES} ${HEADERS})
+#target_link_libraries(warehousebattery ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+target_link_libraries(warehousebattery ${CMAKE_THREAD_LIBS_INIT} pthread)
+install(TARGETS warehousebattery RUNTIME DESTINATION bin)

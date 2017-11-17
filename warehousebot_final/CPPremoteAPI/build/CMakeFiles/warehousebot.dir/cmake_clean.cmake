@@ -1,19 +1,18 @@
-file(REMOVE_RECURSE
-  "CMakeFiles/warehousebot.dir/warehousebot.cpp.obj"
-  "CMakeFiles/warehousebot.dir/remoteApi/extApi.c.obj"
-  "CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.obj"
-  "CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.obj"
-  "CMakeFiles/warehousebot.dir/libraries/dock.cpp.obj"
-  "CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.obj"
-  "CMakeFiles/warehousebot.dir/libraries/robot.cpp.obj"
-  "CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.obj"
+FILE(REMOVE_RECURSE
+  "CMakeFiles/warehousebot.dir/warehousebot.cpp.o"
+  "CMakeFiles/warehousebot.dir/remoteApi/extApi.c.o"
+  "CMakeFiles/warehousebot.dir/remoteApi/extApiPlatform.c.o"
+  "CMakeFiles/warehousebot.dir/libraries/diffdrive.cpp.o"
+  "CMakeFiles/warehousebot.dir/libraries/dock.cpp.o"
+  "CMakeFiles/warehousebot.dir/libraries/linefollow.cpp.o"
+  "CMakeFiles/warehousebot.dir/libraries/robot.cpp.o"
+  "CMakeFiles/warehousebot.dir/libraries/statemachine.cpp.o"
+  "CMakeFiles/warehousebot.dir/libraries/battery.cpp.o"
   "warehousebot.pdb"
-  "warehousebot.exe"
-  "warehousebot.exe.manifest"
-  "libwarehousebot.dll.a"
+  "warehousebot"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C CXX)
-  include(CMakeFiles/warehousebot.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang C CXX)
+  INCLUDE(CMakeFiles/warehousebot.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)
