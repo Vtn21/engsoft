@@ -5,8 +5,8 @@
 #define RED 1
 #define GREEN 2
 #define BLUE 3
-#define YELLOW 4
-#define OTHER 5
+#define WHITE 4
+#define YELLOW 5
 
 #define STEP 0.2
 
@@ -68,37 +68,24 @@ void StateMachine::run() {
     while(isActive()) {
         switch(state) {
             case 0: // Start
-                stColor[0] = 4;
-                stColor[1] = 4;
-                stColor[2] = 4;
-                stColor[3] = 4;
-                stColor[4] = 4;
-
-                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor"), (simxInt) stColor[0], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0LoadColor"), (simxInt) stColor[1], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0UnloadColor"), (simxInt) stColor[2], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1LoadColor"), (simxInt) stColor[3], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1UnloadColor"), (simxInt) stColor[4], simx_opmode_oneshot);
-
                 cout << "State 0" << endl;
                 setSpeed(0, 0);
                 state = 1;
-            case 1: // Wait for instruct
+            case 1: // Wait for instruction
                 while(isActive()) {
                     getDockSignal();
                     for(int i = 0; i < 2; i++) {
-                        // cout << "DockSignal#" << i << ": " << dockSignal[i] << endl;
-                        if(dockSignal[i] == DOCK_NEWITEM) {
+                        if(loadSignal[i] == 1) {
                             targetDock = i;
                             while(true) {
                                  color = follow();
                                  if(color != dockColor[i]) forward(STEP); // Small forward step
                                  else {
+                                    cout << "Ready to pick box at dock " << targetDock << "!" << endl;
                                     forward(STEP);
                                     setSpeed(0, 0);
                                     extApi_sleepMs(500);
                                     state = 2;
-                                    cout << "Ready to pick box at dock " << targetDock << "!" << endl;
                                     break;
                                  }
                             }
@@ -111,29 +98,18 @@ void StateMachine::run() {
             case 2: // Pick box
                 cout << "State 2" << endl;
                 cout << "Picking box at dock " << targetDock << "!" << endl;
-                // getNewBoxSignal();
-                // simxSetObjectParent(clientID, (simxInt) newBoxSignal[targetDock], (simxInt) robotHandle, true, simx_opmode_oneshot_wait);
-                //Carga
                 if(targetDock == 0)
                 {
-                    stColor[0] = 1; //red robot
-                    stColor[1] = 4; //white box
+                    colorSignal[0] = RED; //red robot
+                    colorSignal[1] = WHITE; //white box
                 } else
                 {
-                    stColor[0] = 2; //green robot
-                    stColor[3] = 4; //white box
+                    colorSignal[0] = GREEN; //green robot
+                    colorSignal[3] = WHITE; //white box
                 }
-
-
-                simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor"), (simxInt) stColor[0], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0LoadColor"), (simxInt) stColor[1], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock0UnloadColor"), (simxInt) stColor[2], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1LoadColor"), (simxInt) stColor[3], simx_opmode_oneshot);
-                simxSetIntegerSignal(clientID, (const simxChar*) ("dock1UnloadColor"), (simxInt) stColor[4], simx_opmode_oneshot);
-
-                dockSignal[targetDock] = DOCK_EMPTY;
+                setColorSignal();
+                loadSignal[targetDock] = 0;
                 setDockSignal();
-                cout << "DockSignal: " << dockSignal[targetDock] << endl;
                 state = 3; // Next state: place the recently picked box
                 break;
             case 3: // Place box
@@ -144,7 +120,7 @@ void StateMachine::run() {
                     do {
                         // Search if the other dock is empty
                         for(int i = 0; i < 2; i++) {
-                            if(i != targetDock && dockSignal[i] != DOCK_FULL) {
+                            if(i != targetDock && unloadSignal[i] == 0) {
                                 // Dock is empty
                                 targetDock = i;
                                 flag = false;
@@ -160,27 +136,22 @@ void StateMachine::run() {
                     cout << "Placing box at dock " << targetDock << "!" << endl;
                     setSpeed(0, 0);
                     extApi_sleepMs(500);
-                    // simxSetObjectParent(clientID, (simxInt) newBoxSignal[!targetDock], -1, true, simx_opmode_oneshot_wait);
-                    //Descarga
+                    // Unloading
                     if(targetDock == 0)
                     {
-                        stColor[2] = 2; //red box
-                        stColor[0] = 4; //white robot
-                        cout << "Set Dock 0 Unload: " << stColor[2] << endl;
+                        colorSignal[2] = RED; //red box
+                        colorSignal[0] = WHITE; //white robot
+                        cout << "Set Dock 0 Unload: " << colorSignal[2] << endl;
                         
                     } else
                     {
-                        stColor[4] = 1; //green box
-                        stColor[0] = 4; //white robot
-                        cout << "Set Dock 1 Unload: " << stColor[4] << endl;
+                        colorSignal[4] = GREEN; //green box
+                        colorSignal[0] = WHITE; //white robot
+                        cout << "Set Dock 1 Unload: " << colorSignal[4] << endl;
                         
                     }
-                    simxSetIntegerSignal(clientID, (const simxChar*) ("dock1UnloadColor"), (simxInt) stColor[4], simx_opmode_oneshot);
-                    simxSetIntegerSignal(clientID, (const simxChar*) ("dock0UnloadColor"), (simxInt) stColor[2], simx_opmode_oneshot);
-                    simxSetIntegerSignal(clientID, (const simxChar*) ("robotColor"), (simxInt) stColor[0], simx_opmode_oneshot);
-
-                    dockSignal[targetDock] = DOCK_FULL;
-                    dockSignal[!targetDock] = DOCK_EMPTY;
+                    setColorSignal();
+                    unloadSignal[targetDock] = 1;
                     setDockSignal();                    
                     state = 0; // Next state: wait for instruction
                     break;
