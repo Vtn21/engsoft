@@ -46,16 +46,21 @@ include_directories("libraries/")
 find_package(Threads REQUIRED)
 
 add_executable(warehousebot warehousebot.cpp ${SOURCES} ${HEADERS})
-#target_link_libraries(warehousebot ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
-target_link_libraries(warehousebot ${CMAKE_THREAD_LIBS_INIT} pthread)
-install(TARGETS warehousebot RUNTIME DESTINATION bin)
-
 add_executable(warehousedock warehousedock.cpp ${SOURCES} ${HEADERS})
-#target_link_libraries(warehousedock ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
-target_link_libraries(warehousedock ${CMAKE_THREAD_LIBS_INIT} pthread)
-install(TARGETS warehousedock RUNTIME DESTINATION bin)
-
 add_executable(warehousebattery warehousebattery.cpp ${SOURCES} ${HEADERS})
-#target_link_libraries(warehousebattery ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
-target_link_libraries(warehousebattery ${CMAKE_THREAD_LIBS_INIT} pthread)
+
+if(WIN32)
+    target_link_libraries(warehousebot ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+    target_link_libraries(warehousedock ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+    target_link_libraries(warehousebattery ${CMAKE_THREAD_LIBS_INIT} winmm ws2_32)
+endif()
+
+if(UNIX AND NOT APPLE)
+    target_link_libraries(warehousebot ${CMAKE_THREAD_LIBS_INIT} pthread)
+    target_link_libraries(warehousedock ${CMAKE_THREAD_LIBS_INIT} pthread)
+    target_link_libraries(warehousebattery ${CMAKE_THREAD_LIBS_INIT} pthread)
+endif()
+
+install(TARGETS warehousebot RUNTIME DESTINATION bin)
+install(TARGETS warehousedock RUNTIME DESTINATION bin)
 install(TARGETS warehousebattery RUNTIME DESTINATION bin)
