@@ -48,7 +48,7 @@
 
 ### Who do I talk to? ###
 
-* Eduardo Scheffer (Scheffer888): admin
-* Leonardo Luís da Silva (leo1397): admin
-* Matheus Scherma (mscherma): admin
-* Victor Noppeney (vtn21): owner
+* Eduardo Scheffer
+* Leonardo Luís da Silva
+* Matheus Scherma
+* Victor Noppeney (Vtn21): owner
