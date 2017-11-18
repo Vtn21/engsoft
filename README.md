@@ -50,5 +50,5 @@
 
 * Eduardo Scheffer
 * Leonardo Luís da Silva
-* Matheus Scherma
+* Matheus Scherma (mscherma): contributor
 * Victor Noppeney (Vtn21): owner
