@@ -73,7 +73,6 @@ void StateMachine::run() {
         {
             switch(state) {
                 case 0: // Start
-                    cout << "State 0" << endl;
                     setSpeed(0, 0);
                     getDockSignal();
                     getColorSignal();
@@ -96,7 +95,6 @@ void StateMachine::run() {
                     }
                     break;
                 case 2: // Pick box
-                    cout << "State 2" << endl;
                     cout << "Picking box at dock " << targetDock << "!" << endl;
                     getDockSignal();
                     getColorSignal();
@@ -114,7 +112,6 @@ void StateMachine::run() {
                     state = 3; // Next state: place the recently picked box
                     break;
                 case 3: // Place box
-                    cout << "State 3" << endl;
                     while(isActive()) {
                         bool flag = true;
                         do {
@@ -139,11 +136,9 @@ void StateMachine::run() {
                         if(targetDock == 0) {
                             colorSignal[2] = GREEN; //green box
                             colorSignal[0] = WHITE; //white robot
-                            cout << "Set Dock 0 Unload: " << colorSignal[2] << endl;
                         } else {
                             colorSignal[4] = RED; //red box
                             colorSignal[0] = WHITE; //white robot
-                            cout << "Set Dock 1 Unload: " << colorSignal[4] << endl;
                         }
                         setColorSignal();
                         unloadSignal[targetDock] = 1;
