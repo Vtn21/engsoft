@@ -18,7 +18,7 @@
 
 ### Windows setup ###
 
-* Open command prompt at engsoft\warehouse\CPPremoteAPI\build
+* Create folder engsoft\warehouse\CPPremoteAPI\build and open command prompt inside it
 * Run "cmake -G "MinGW Makefiles" .." to create Makefile
 * Run "mingw32-make" to build
 * Open engsoft\warehouse\warehouse.ttt using V-REP
@@ -26,7 +26,7 @@
 
 ### Linux setup ###
 
-* Open terminal at engsoft/warehouse/CPPremoteAPI/build
+* Create folder engsoft\warehouse\CPPremoteAPI\build and open terminal inside it
 * Run "cmake .." to create Makefile
 * Run "make" to build
 * Open engsoft/warehouse/warehouse.ttt using V-REP
